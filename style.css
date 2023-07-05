@@ -1,7 +1,16 @@
+
+/*HIDE OR SHOW RESULTS*/
+
 .hidden {
   display: none;
 }
 /* UTILITIES */
+main {
+  padding-top: 6em;
+  text-align: center;
+  height: 796px;
+  background-color: wheat;
+}
 * {
   margin: 0;
   padding: 0;
@@ -50,6 +59,7 @@ li {
   background-color: #4c9e9e;
   border-radius: 5px;
   transition: 0.3s ease;
+  cursor:pointer;
 }
 
 .menu li {
@@ -101,18 +111,15 @@ li {
 }
 
 .sidebar {
-  margin-top: 5.5em;
-  border: 3px solid black;
+  border-right: 3px solid black;
   padding: 15px;
   width: 20%;
-  height: 87.5vh;
+  height: 100.5vh;
   position: -webkit-sticky;
   position: sticky;
-  top: 5.5em;
+  top: 4.9em;
   background-color: antiquewhite;
-  margin-left: 1em;
   margin-right: 1em;
-  border-radius: 1em;
 }
 
 .main {
@@ -141,5 +148,20 @@ body {
   background-color: antiquewhite;
 }
 
-/*HIDE OR SHOW RESULTS*/
+/*General Forms*/
 
+.form div {
+  margin-bottom: .5em;
+}
+
+.submit input{
+  margin-top: .3em;
+  background-color: rgb(219, 216, 216);
+  width: 5em;
+  height: 2.4em;
+  border-radius: .3em;
+}
+
+.submit input:hover{
+  background-color: rgb(192, 186, 186);
+}

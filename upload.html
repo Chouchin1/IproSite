@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accessibility Database</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <nav id="NavBar">
+        <img src="./images/..." alt="">
+        <div class="logo">FILLER</div>
+        <ul class="nav-links">
+            <div class="menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+
+                <li class="services">
+                    <a>Services</a>
+                    <ul class="dropdown">
+                        <li><a href="./login.html">Log in</a></li>
+                        <li><a href="./signup.html">Sign Up</a></li>
+                        <li><a href="./forum.html">Forum</a></li>
+                        <li><a href="./upload.html">Upload</a></li>
+                    </ul>
+                </li>
+                    
+                <li><a href="contact.html">Contact</a></li>
+                <div class="search-bar">
+                    <label for="search">&#x1F50D</label>
+                    <input type="text" id="search" name="search" onkeyup="searchFunction()" placeholder="Search">
+                </div>
+            </div>
+        </ul>
+    </nav>
+    <main>
+      <div class="upload form">
+        <div class="name">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="upload-name">
+        </div>
+        <div class="link">
+          <label for="link">Link</label>
+          <input type="text" name="link" id="upload-link">
+        </div>
+        <div class="description">
+          <label for="description">Description</label>
+          <input type="text" name="description" id="upload-description">
+        </div>
+        <div class="tags">
+          <div class="conditions">
+            <h3>CONDITIONS</h3>
+            <input type="button" onclick="hilightButton()" value="adhd">
+            <input type="button" onclick="hilightButton()" value="dyslexia">
+            <input type="button" onclick="hilightButton()" value="hearing-loss">
+            <input type="button" onclick="hilightButton()" value="dyscalculia">
+            <input type="button" onclick="hilightButton()" value="vision-impairment">
+            <input type="button" onclick="hilightButton()" value="epilepsy">
+            <input type="button" onclick="hilightButton()" value="color-blindness">
+          </div>
+          <div class="type">
+            <h3>TYPE</h3>
+            <input type="button" onclick="hilightButton()" value="website">
+            <input type="button" onclick="hilightButton()" value="desktop-apps">
+            <input type="button" onclick="hilightButton()" value="browser-extension">
+            <input type="button" onclick="hilightButton()" value="physical-products">
+          </div>
+          <div class="submit">
+            <input type="button" value="submit" onclick="home()">
+          </div>
+        </div>
+      </div>
+    </main>
+  <script src="script.js"></script>
+  </body>
+</html>     

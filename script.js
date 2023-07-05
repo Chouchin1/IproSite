@@ -1,23 +1,26 @@
 currentMin = 0
 var selected = {type:"all",condition:"all"}
-var rating = "all"
+var rating = ['1-star','2-star','3-star','4-star','5-star']
+var shown = new Array()
+var hidden = []
+var x = document.getElementsByClassName('result')
+for (i = 0; i < x.length; i++){
+  shown.push(x[i])
+}
 
 function filterSelection(category, name) {
-  x = document.getElementsByClassName('result')
   checkbox = document.getElementById(name)
   if (category == "min-rating"){
     var minRatings = ['1-star','2-star','3-star','4-star','5-star']
     selectBox = document.getElementById('min-rating')
-    console.log(selectBox.selectedIndex)
     idx = selectBox.selectedIndex
     minRatings.splice(0,idx)
     rating = minRatings
-    console.log(rating)
     if (idx > currentMin) {
-      console.log("test")
-      removeOptions(x)
+      removeOptions()
     }
-    else returnOptions(x)
+    else {returnOptions()}
+    currentMin = idx
     return
 
   }
@@ -26,7 +29,7 @@ function filterSelection(category, name) {
       selected[category] = [name]
     }
     else selected[category].push(name)
-    removeOptions(x)
+    removeOptions()
   }
   else {
     var idx = selected[category].indexOf(name)
@@ -34,58 +37,64 @@ function filterSelection(category, name) {
     if (selected[category].length == 0){
       selected[category] = "all"
     }
-    returnOptions(x)
+    returnOptions()
   }
 }
 
-function removeOptions(x){
-  for (i = 0; i < x.length; i++){
-    classes = x[i].className.split(" ")
+function removeOptions(){
+  i=0
+  while(i < shown.length){
+    classes = shown[i].className.split(" ")
     if (!(rating.includes(classes[2]))){
-      classes.push("hidden")
-      classes = classes.join(" ")
-      x[i].className = classes
+      shown[i].className = classes.join(" ") + " hidden"
+      hidden.push((shown.splice(i,1))[0])
     }
     else{
       for (const property in selected){
         if (selected[property] != 'all'){
-          console.log(rating.contains(classes[2]))
           for(j = 0; j < selected[property].length; j++){
             if (!(classes.includes(selected[property][j]))){
-              if (!classes.includes('hidden')){
-                classes.push("hidden")
-                classes = classes.join(" ")
-                x[i].className = classes
-              }
+                shown[i].className = classes.join(" ") + " hidden"
+                hidden.push((shown.splice(i,1))[0])
+                i--
+            }
+          }
+        }
+      }
+    }
+    i++
+  }
+}
+
+function returnOptions(){
+  i = 0
+  while (i < hidden.length){
+    classes = hidden[i].className.split(" ")
+    console.log(classes)
+    bringBack = true
+    if (!(rating.includes(classes[2]))){
+      bringBack = false
+    }
+    else{
+      for (const property in selected){
+        if (selected[property] != 'all'){
+          for (j = 0; j < selected[property].length; j++){
+            if (!classes.includes(selected[property][j])){
+              bringBack = false
               break
             }
           }
         }
       }
     }
-  }
-}
-
-function returnOptions(){
-  bringBack = true
-  for (i = 0; i < x.length; i++){
-    classes = x[i].className.split(" ")
-    for (const property in selected){
-      if (selected[property] != 'all'){
-        for (j = 0; j < selected[property].length; j++){
-          if (!classes.includes(selected[property][j])){
-            bringBack = false
-          }
-        }
-      }
+    if (bringBack){
+      console.log('*')
+      classes.splice(classes.indexOf('hidden'),1)
+      hidden[i].className = classes.join(" ")
+      shown.push((hidden.splice(i,1))[0])
+      i--
     }
-    if (bringBack && classes.includes('hidden')){
-      idx = classes.indexOf('hidden')
-      classes.splice(idx,1)
-      console.log(classes)
-      classes = classes.join(" ")
-      x[i].className = classes
-    }
+    i++
   }
 }
 
@@ -103,8 +112,6 @@ function searchFunction() {
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       results[i].style.display = "";
-      
-      console.log('test')
     } else {
       results[i].style.display = "none";
     }

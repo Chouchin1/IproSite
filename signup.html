@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accessibility Database</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <nav id="NavBar">
+        <img src="./images/..." alt="">
+        <div class="logo">FILLER</div>
+        <ul class="nav-links">
+            <div class="menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+
+                <li class="services">
+                    <a>Services</a>
+                    <ul class="dropdown">
+                        <li><a href="./login.html">Log in</a></li>
+                        <li><a href="./signup.html">Sign Up</a></li>
+                        <li><a href="./forum.html">Forum</a></li>
+                        <li><a href="./upload.html">Upload</a></li>
+                    </ul>
+                </li>
+                    
+                <li><a href="contact.html">Contact</a></li>
+                <div class="search-bar">
+                    <label for="search">&#x1F50D</label>
+                    <input type="text" id="search" name="search" onkeyup="searchFunction()" placeholder="Search">
+                </div>
+            </div>
+        </ul>
+    </nav>
+    <main>
+      <div class="sign-up form">
+        <div class="email">
+          <label for="email">Email:</label>
+          <input type="text" placeholder="User1234@gmail.com">
+        </div>
+        <div class="password">
+          <label for="password">Password:</label>
+          <input type="text" placeholder="*******" name="password">
+        </div>
+        <div class="password">
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="text" placeholder="*******" name="confirm-password">
+        </div>
+        <div class="sign-up-options">
+          <input type="button" value="Student" onclick="hilightOne()">
+          <input type="button" value="Teacher" onclick="hilightOne()">
+        </div>
+        <div class="terms">
+          <input type="checkbox" name="terms" id="terms-box" onclick="termsAgreed()">
+          <label for="terms">Please agree to the terms and conditions</label>
+        </div>
+        <div class="submit">
+          <input type="button" value="submit" onclick="home()">
+        </div>
+      </div>
+    </main>
+  <script src="script.js"></script>
+  </body>
+</html>     
