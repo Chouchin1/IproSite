@@ -105,25 +105,35 @@ li {
 /* BODY STYLING STARTS*/
 
 .wrapper {
-  background-color: wheat;
+  background-color: white;
   display: flex;
   justify-content: space-between;
 }
 
 .sidebar {
-  border-right: 3px solid black;
   padding: 15px;
-  width: 20%;
-  height: 100.5vh;
+  width: 15%;
+  height: 90.5vh;
   position: -webkit-sticky;
   position: sticky;
   top: 4.9em;
-  background-color: antiquewhite;
   margin-right: 1em;
+  background-color: #4c9e9e;
+}
+
+.sidebar .filter{
+  margin-top: .5em;
+  border: solid 2.5px black;
+  border-radius: .25em;
+  padding-left: .3em;
+  width: auto;
+}
+.sidebar h1{
+  margin-top: .6em;
 }
 
 .main {
-  width: 80%;
+  width: 87%;
   height: 200vh;
   margin-right: 1em;
   margin-top: 5.5em;
