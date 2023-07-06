@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
-  <body>
+  <body onload="populate()">
     <nav id="NavBar">
         <img src="./images/..." alt="">
         <div class="logo">FILLER</div>
@@ -19,7 +19,7 @@
 
                 <li class="services">
                     <a>Services</a>
-                    <ul class="dropdown">
+                    <ul id="dropdown">
                         <li><a href="./login.html">Log in</a></li>
                         <li><a href="./signup.html">Sign Up</a></li>
                         <li><a href="./forum.html">Forum</a></li>
@@ -35,44 +35,49 @@
             </div>
         </ul>
     </nav>
-    <main>
-      <div class="upload form">
-        <div class="name">
+    <main class="form-main">
+      <form id="upload">
+        <div id="name">
           <label for="name">Name</label>
           <input type="text" name="name" id="upload-name">
         </div>
-        <div class="link">
+        <div id="link">
           <label for="link">Link</label>
           <input type="text" name="link" id="upload-link">
         </div>
-        <div class="description">
-          <label for="description">Description</label>
+        <div id="description"> 
+          <label for="description">Description</label><br>
           <input type="text" name="description" id="upload-description">
         </div>
-        <div class="tags">
-          <div class="conditions">
+        <div id="tags">
+          <div id="conditions">
             <h3>CONDITIONS</h3>
-            <input type="button" onclick="hilightButton()" value="adhd">
-            <input type="button" onclick="hilightButton()" value="dyslexia">
-            <input type="button" onclick="hilightButton()" value="hearing-loss">
-            <input type="button" onclick="hilightButton()" value="dyscalculia">
-            <input type="button" onclick="hilightButton()" value="vision-impairment">
-            <input type="button" onclick="hilightButton()" value="epilepsy">
-            <input type="button" onclick="hilightButton()" value="color-blindness">
+            <input type="button" class="" onclick="highlightButton('conditions',1)" value="adhd">
+            <input type="button" class="" onclick="highlightButton('conditions',2)" value="dyslexia">
+            <input type="button" class="" onclick="highlightButton('conditions',3)" value="hearing-loss">
+            <input type="button" class="" onclick="highlightButton('conditions',4)" value="dyscalculia"><br>
+            <input type="button" class="" onclick="highlightButton('conditions',6)" value="vision-impairment">
+            <input type="button" class="" onclick="highlightButton('conditions',7)" value="epilepsy">
+            <input type="button" class="" onclick="highlightButton('conditions',8)" value="color-blindness">
           </div>
-          <div class="type">
+          <div id="type">
             <h3>TYPE</h3>
-            <input type="button" onclick="hilightButton()" value="website">
-            <input type="button" onclick="hilightButton()" value="desktop-apps">
-            <input type="button" onclick="hilightButton()" value="browser-extension">
-            <input type="button" onclick="hilightButton()" value="physical-products">
+            <input type="button" class="" onclick="highlightButton('type', 1)" value="website">
+            <input type="button" class="" onclick="highlightButton('type', 2)" value="desktop-apps"><br>
+            <input type="button" class="" onclick="highlightButton('type', 4)" value="browser-extension">
+            <input type="button" class="" onclick="highlightButton('type', 5)" value="physical-products">
           </div>
-          <div class="submit">
-            <input type="button" value="submit" onclick="home()">
+          <div id="submit">
+            <input type="button" value="submit" 
+               onclick="playUpload(document.getElementById('name').children[1].value, 
+                         document.getElementById('link').children[1].value, 
+                         document.getElementById('description').children[2].value)">
           </div>
         </div>
-      </div>
+      </form>
     </main>
-  <script src="script.js"></script>
+  <script src="script.js">
+    
+  </script>
   </body>
 </html>     

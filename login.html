@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
-  <body>
+  <body onload="populate()">
     <nav id="NavBar">
         <img src="./images/..." alt="">
         <div class="logo">FILLER</div>
@@ -19,7 +19,7 @@
 
                 <li class="services">
                     <a>Services</a>
-                    <ul class="dropdown">
+                    <ul id="dropdown">
                         <li><a href="./login.html">Log in</a></li>
                         <li><a href="./signup.html">Sign Up</a></li>
                         <li><a href="./forum.html">Forum</a></li>
@@ -35,21 +35,25 @@
             </div>
         </ul>
     </nav>
-    <main>
-      <div class="log-in form">
+    <main class="form-main">
+      <form id="log-in">
         <div class="email">
           <label for="email">Email:</label>
-          <input type="text" placeholder="User1234@gmail.com" name="email">
+          <input type="text" placeholder="User1234@gmail.com" name="email" id="log-in-email">
         </div>
         <div class="password">
           <label for="password">Password:</label>
-          <input type="text" placeholder="*******" name="password">
+          <input type="text" placeholder="*******" name="password"  id="log-in-password">
         </div>
-        </div>
+        </form>
         <div class="submit">
-          <input type="button" value="submit" onclick="home()">
+          <input type="button" value="submit" onclick="login(document.getElementById('log-in-email').value, 
+                                                    document.getElementById('log-in-password').value, false)">
         </div>
-      </div>
+        <div class="error">
+          <h3 id="log-in-error-message"></h3>
+        </div>
+      </form>
     </main>
   <script src="script.js"></script>
   </body>

@@ -74,7 +74,7 @@ li {
   position: relative; 
 }
 
-.dropdown {
+#dropdown {
   background-color: rgb(1, 139, 139);
   padding: 1em 0;
   position: absolute; /*WITH RESPECT TO PARENT*/
@@ -83,21 +83,21 @@ li {
   top: 35px;
 }
 
-.dropdown li + li {
+#dropdown li + li {
   margin-top: 10px;
 }
 
-.dropdown li {
+#dropdown li {
   padding: 0.5em 1em;
   width: 8em;
   text-align: center;
 }
 
-.dropdown li:hover {
+#dropdown li:hover {
   background-color: #4c9e9e;
 }
 
-.services:hover .dropdown {
+.services:hover #dropdown {
   display:block;
   position: fixed;
   margin-top: 1em;
@@ -114,10 +114,10 @@ li {
   border-right: 3px solid black;
   padding: 15px;
   width: 20%;
-  height: 100.5vh;
+  height: 89.7vh;
   position: -webkit-sticky;
   position: sticky;
-  top: 4.9em;
+  top: 4.75em;
   background-color: antiquewhite;
   margin-right: 1em;
 }
@@ -150,7 +150,7 @@ body {
 
 /*General Forms*/
 
-.form div {
+form div {
   margin-bottom: .5em;
 }
 
@@ -164,4 +164,26 @@ body {
 
 .submit input:hover{
   background-color: rgb(192, 186, 186);
+}
+
+
+/*SIGN UP SPECIFIC*/
+.sign-up .terms a{
+  text-decoration: underline;
+}
+
+/*UPLOAD SPECIFIC*/
+#upload #description input{
+  height: 7em;
+  width: 20em;
+}
+
+#upload #tags input{
+  margin:.2em;
+  width:9em;
+  height:2em
+}
+
+.highlightButton{
+  background-color: #4c9e9e;
 }
