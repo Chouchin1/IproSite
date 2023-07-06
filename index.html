@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Accessibility Database</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./images/EDG_Logo.png" type="image/x-icon">
   </head>
-  <body onload="populate(), uploadAll()" >
+  <body onload="populate(), uploadAll()" class="" >
     <nav id="NavBar">
-        <img src="./images/..." alt="">
-        <div class="logo">FILLER</div>
+        <div class="logo">
+            <img id="logo" src="./images/EDG_Logo.png" alt="">
+            <div class="logo">Accessibility Database</div>
+        </div>
         <ul class="nav-links">
             <div class="menu">
                 <li><a href="./index.html">Home</a></li>
@@ -21,7 +23,8 @@
                     <a>Services</a>
                     <ul id="dropdown">
                         <li><a href="./login.html">Log in</a></li>
-                        <li><a href="./signup.html">Sign Up</a></li>
+                        <li><a href="./signup.html">Sign Up</a>
+                            <input type="button" onclick="signOut()" hidden="true" value="Sign Out"></li>
                         <li><a href="./forum.html">Forum</a></li>
                         <li><a href="./upload.html">Upload</a></li>
                     </ul>
@@ -31,6 +34,15 @@
                 <div class="search-bar">
                     <label for="search">&#x1F50D</label>
                     <input type="text" id="search" name="search" onkeyup="searchFunction()" placeholder="Search">
+                </div>
+                <div id="color-swap">
+                    <label for="color-swap">Color Pallet</label><br>
+                    <select name="pallet-select" id="pallet-select" onchange="changePallet(document.getElementById('pallet-select').selectedIndex)">
+                        <option value="green">Green</option>
+                        <option value="dark">Dark</option>
+                        <option value="beige">Neutral</option>
+                        <option value="modern">Modern</option>
+                    </select>
                 </div>
             </div>
         </ul>
@@ -109,92 +121,77 @@
         </div>
         <div class="main" id="main">
             <section class="result 4-star adhd browser-extension">
-                <a href="..." class="result-title"><b>ADHD Reader</b></a>
-                <img class="result-image" src="./images/..." alt="...">
-                <p class="result-description">Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Dictum at tempor commodo ullamcorper. Tempus imperdiet nulla malesuada</p>
+                <a href="https://chrome.google.com/webstore/detail/adhd-reader/gcbchiambcokahmamemkoadlanaealmf" class="result-title"><b>ADHD Reader</b></a>
+                <p class="result-description">ADHD Reader is a chrome extension that helps you read faster by highlighting beginning of every word on the websites.</p>
                 
             </section>
             <section class="result 3-star dyslexia adhd browser-extension">
                 <a href="..." class="result-title"><b>Dysly reader</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Maecenas accumsan lacus vel facilisis volutpat est velit. Consequat semper viverra nam libero justo laoreet sit amet. Lobortis elementum nibh.</p>
 
             </section>
             <section class="result 5-star vision-impairment physical-products">
                 <a href="..." class="result-title"><b>Dark Reader</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Aliquam eleifend mi in nulla. Eu volutpat odio facilisis mauris sit. Sagittis vitae et leo duis ut diam quam.</p>
 
             </section>
             <section class="result 2-star hearing-loss browser-extension">
                 <a href="..." class="result-title"><b>Speech Recognition Anywhere</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Ultrices neque ornare aenean euismod. Enim praesent elementum facilisis leo vel fringilla est.</p>
 
             </section>
             <section class="result 1-star epilepsy browser-extension">
                 <a href="..." class="result-title"><b>Seizafe - Epilepsy Alert for YouTube</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Interdum velit euismod in pellentesque massa placerat duis ultricies lacus.</p>
 
             </section>
             <section class="result 5-star adhd browser-extension"> 
                 <a href="..." class="result-title"><b>Beeline Reader</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Euismod lacinia at quis risus sed vulputate odio ut enim. Est lorem ipsum dolor sit amet consectetur</p>
 
             </section>
             <section class="result 4-star vision-impairment browser-extension">
                 <a href="..." class="result-title"><b>Lorem ipsum</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Mi ipsum faucibus vitae aliquet nec. Turpis massa sed elementum tempus egestas sed sed risus</p>
 
             </section>
             <section class="result 3-star color-blindness browser-extension">
                 <a href="..." class="result-title"><b>dolor sit</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Rhoncus urna neque viverra justo nec ultrices dui sapien.</p>
 
             </section>
             <section class="result 1-star adhd dyscalculia browser-extension">
                 <a href="..." class="result-title"><b>consectetur adipiscing</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Blandit cursus risus at ultrices. Urna porttitor rhoncus dolor purus non enim</p>
 
             </section>
             <section class="result 3-star hearing-loss browser-extension">
                 <a href="..." class="result-title"><b>enim ad minim</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Consectetur adipiscing elit pellentesque habitant morbi tristique senectus</p>
 
             </section>
             <section class="result 3-star epilepsy desktop-apps">
                 <a href="..." class="result-title"><b>irure dolor</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Orci ac auctor augue mauris augue neque gravida. Viverra mauris in aliquam sem</p>
 
             </section>
             <section class="result 4-star dyslexia dyscalculia website">
                 <a href="..." class="result-title"><b>Duis aute</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
 
             </section>
             <section class="result 5-star adhd desktop-apps">
                 <a href="..." class="result-title"><b>nulla pariatur</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
 
             </section>
             <section class="result 2-star adhd vision-impairment extension">
                 <a href="..." class="result-title"><b>mollit anim</b></a>
-                <img class="result-image" src="./images/..." alt="...">
                 <p class="result-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
             </section>
             <section class="result 3-star color-blindness physical-products">
-                <a href="..." class="result-title"><b>est laborum</b></a>
-                <img class="result-image" src="./images/..." alt="...">
+                <a href="..." class="result-title"><b>Color Blind</b></a>
                 <p class="result-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
 
             </section>

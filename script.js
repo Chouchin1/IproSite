@@ -7,36 +7,34 @@ var x = document.getElementsByClassName('result')
 for (i = 0; i < x.length; i++){
   shown.push(x[i])
 }
-
 var signedIn = false
 var userName = ""
 var userEmail = ""
 var userPosts = ""
 var users = {}
 var newUploads = [] 
-
-function populate() {
-    
+var currentColor = ''
+ 
+function populate() {  
     newUploads =    JSON.parse(localStorage.getItem('newUploads'))
     signedIn =      JSON.parse(localStorage.getItem('signedIn'))
     userName =      JSON.parse(localStorage.getItem('userName'))
     userEmail =     JSON.parse(localStorage.getItem('userEmail'))
     userPosts =     JSON.parse(localStorage.getItem('userPosts'))
     users =         JSON.parse(localStorage.getItem('users'))
+    currentColor =  JSON.parse(localStorage.getItem('currentColor'))
+    if (currentColor){changePallet(['green', 'dark', 'neutral', 'modern'].indexOf(currentColor))}
     if (!newUploads)[newUploads = []]
     if (!users){users = {}}
     if (signedIn){
         var dropDown = document.getElementById('dropdown').children
-        dropDown[0].children[0].href = './account.html'
-        dropDown[1].children[0].href = ''
-        dropDown[1].children[0].addEventListener('click', signOut())
+        dropDown[1].children[0].setAttribute('hidden', "")
+        dropDown[1].children[1].removeAttribute('hidden')
+        dropDown[0].children[0].setAttribute('href','./account.html')
         dropDown[0].children[0].textContent = "Account"
-        dropDown[1].children[0].textContent = "Sign Out"
-        console.log(dropDown[1])
-        console.log(dropDown[0])
     }
     console.log(newUploads)
-    localStorage.clear()
+    //localStorage.clear()
 }
 
 function filterSelection(category, name) {
@@ -47,7 +45,6 @@ function filterSelection(category, name) {
     idx = selectBox.selectedIndex
     minRatings.splice(0,idx)
     rating = minRatings
-    console.log(rating)
     if (idx > currentMin) {
       removeOptions()
     }
@@ -76,10 +73,7 @@ function removeOptions(){
   i=0
   while(i < shown.length){
     classes = shown[i].className.split(" ")
-    console.log(classes)
-    console.log(rating.includes(classes[1]))
     if (!(rating.includes(classes[1]))){
-      console.log('test')
       shown[i].className = classes.join(" ") + " hidden"
       hidden.push((shown.splice(i,1))[0])
       i--
@@ -99,8 +93,6 @@ function removeOptions(){
     }
     i++
   }
-  console.log(shown)
-  console.log(hidden)
 }
 
 function returnOptions(){
@@ -117,6 +109,7 @@ function returnOptions(){
           for (j = 0; j < selected[property].length; j++){
             if (!classes.includes(selected[property][j])){
               bringBack = false
+              console.log(hidden[i].children[0])
               break
             }
           }
@@ -128,6 +121,7 @@ function returnOptions(){
       hidden[i].className = classes.join(" ")
       shown.push((hidden.splice(i,1))[0])
       i--
+      
     }
     i++
   }
@@ -195,7 +189,7 @@ function login(email, password, signUp){
             localStorage.setItem("userEmail", JSON.stringify(userEmail))
             localStorage.setItem("userName", JSON.stringify(userName))
             localStorage.setItem("signedIn", JSON.stringify(signedIn))
-            window.location = "./index.html"
+            window.location = './index.html'
             return
         }
     }else{
@@ -214,9 +208,22 @@ function highlightButton(category, index){
     }
 }
 
+function highlightOne(self, other){
+  if (!(self.className =='highlightButton')){
+    self.className = 'highlightButton'
+    if (other.className == 'highlightButton'){
+      other.className = ''
+      console.log('test')
+      console.log(other.className)
+    }
+    console.log(self.className)
+  }
+
+}
+
 
 function playUpload(name, link, description){
-    className = 'result'
+    className = 'result 1-star'
     x = document.getElementById('tags').getElementsByClassName('highlightButton')
     for (i = 0; i < x.length; i++){
         className += " " + x[i].value
@@ -226,7 +233,6 @@ function playUpload(name, link, description){
 }
 
 function uploadAll(){
-    console.log(newUploads)
     for (i = 0; i < newUploads.length; i++){
         upload(newUploads[i][0], newUploads[i][1], newUploads[i][2], newUploads[i][3])
     }
@@ -234,7 +240,7 @@ function uploadAll(){
 
 function upload(name, link, description, className) {
     const newResult = document.createElement("section")
-    newResult.className = 'result ' + className
+    newResult.className =  className
     const resultName = document.createElement("a")
     resultName.href = link
     resultName.className = "result-title"
@@ -242,23 +248,30 @@ function upload(name, link, description, className) {
     resultNameBold.textContent = name
     resultName.appendChild(resultNameBold)
     newResult.appendChild(resultName)
-    const image = document.createElement("img")
-    image.className = "result-image"
-    image.src = "./images/..." 
-    image.alt = "..."
-    newResult.appendChild(image)
     const resultDescription = document.createElement("p")
     resultDescription.className = "result-description"
     resultDescription.textContent = description
     newResult.appendChild(resultDescription)
     document.getElementById('main').appendChild(newResult)
-    console.log(newResult)
+    shown.push(newResult)
+    console.log(newResult.className)
 }
 function signOut(){
         var dropDown = document.getElementById('dropdown').children
+        console.log('test')
         signedIn = false
+        var dropDown = document.getElementById('dropdown').children
+        dropDown[1].children[0].removeAttribute('hidden')
+        dropDown[1].children[1].setAttribute('hidden', "")
+        dropDown[0].children[0].setAttribute('href','./signin.html')
         dropDown[0].children[0].textContent = "Log In"
-        dropDown[1].children[0].textContent = "Sign Up"
-        dropDown[1].children[0].href = './signup.html'
-        dropDown[0].children[0].href = './login.html'
+        localStorage.setItem('signedIn', JSON.stringify(false))
+
+}
+
+function changePallet(idx){
+  body = document.getElementsByTagName('body')[0]
+  currentColor = ['green', 'dark', 'neutral', 'modern'][idx]
+  body.className = currentColor
+  localStorage.setItem('currentColor', JSON.stringify(currentColor))
 }

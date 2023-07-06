@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Accessibility Database</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./images/EDG_Logo.png" type="image/x-icon">
   </head>
-  <body onload="populate(), uploadAll()" >
+  <body onload="populate()" >
     <nav id="NavBar">
-        <img src="./images/..." alt="">
-        <div class="logo">FILLER</div>
+        <div class="logo">
+            <img id="logo" src="./images/EDG_Logo.png" alt="">
+            <div class="logo">Accessibility Database</div>
+        </div>
         <ul class="nav-links">
             <div class="menu">
                 <li><a href="./index.html">Home</a></li>
@@ -32,9 +34,21 @@
                     <label for="search">&#x1F50D</label>
                     <input type="text" id="search" name="search" onkeyup="searchFunction()" placeholder="Search">
                 </div>
+                <div id="color-swap">
+                    <label for="color-swap">Color Pallet</label><br>
+                    <select name="pallet-select" id="pallet-select" onchange="changePallet(document.getElementById('pallet-select').selectedIndex)">
+                        <option value="green">Green</option>
+                        <option value="dark">Dark</option>
+                        <option value="beige">Neutral</option>
+                        <option value="modern">Modern</option>
+                    </select>
+                </div>
             </div>
         </ul>
     </nav>
+    <main>
+
+    </main>
 	<script src="script.js"></script>
     </body>
 </html>     

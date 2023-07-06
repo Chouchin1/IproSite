@@ -6,10 +6,10 @@
 }
 /* UTILITIES */
 main {
-  padding-top: 6em;
+  padding-top: 8.5em;
   text-align: center;
   height: 796px;
-  background-color: wheat;
+  background-color: #e1f0d9;
 }
 * {
   margin: 0;
@@ -36,7 +36,11 @@ li {
   color: #ffffff;
   overflow: hidden;
   border-bottom-right-radius: 1em;
-  
+  height: 7em;
+}
+
+#NavBar #logo{
+  width: 100px;
 }
 
 .nav-links a {
@@ -46,6 +50,8 @@ li {
 /* LOGO */
 .logo {
   font-size: 32px;
+  display: flex;
+  align-items: center;
 }
 
 /* NAVBAR MENU */
@@ -64,6 +70,7 @@ li {
 
 .menu li {
   padding: 5px 14px;
+  height: 1.65em;
 }
 
 /* NAVBAR STICKY PROPERTY */
@@ -77,10 +84,8 @@ li {
 #dropdown {
   background-color: rgb(1, 139, 139);
   padding: 1em 0;
-  position: absolute; /*WITH RESPECT TO PARENT*/
   display: none;
   border-radius: 8px;
-  top: 35px;
 }
 
 #dropdown li + li {
@@ -91,6 +96,7 @@ li {
   padding: 0.5em 1em;
   width: 8em;
   text-align: center;
+  height: 2em;
 }
 
 #dropdown li:hover {
@@ -100,38 +106,54 @@ li {
 .services:hover #dropdown {
   display:block;
   position: fixed;
-  margin-top: 1em;
 }
 /* BODY STYLING STARTS*/
 
 .wrapper {
-  background-color: wheat;
+  background-color:  #e1f0d9 ;
   display: flex;
   justify-content: space-between;
 }
 
 .sidebar {
-  border-right: 3px solid black;
   padding: 15px;
-  width: 20%;
-  height: 89.7vh;
+  width: 15%;
+  height: 86vh;
   position: -webkit-sticky;
   position: sticky;
-  top: 4.75em;
-  background-color: antiquewhite;
+  top: 7em;
   margin-right: 1em;
+  border-right: 2.5px solid black;
+  background-color: #bed3b2;
+}
+
+.sidebar .filter {
+  margin-top: .3em;
+  border: solid 2.5px black;
+  border-radius: .25em;
+  padding-left: .25em;
+  background-color: #fbfde1;
+}
+
+.sidebar h1{
+  margin-top: .3em;
 }
 
 .main {
-  width: 80%;
+  width: 85%;
   height: 200vh;
   margin-right: 1em;
-  margin-top: 5.5em;
+  margin-top: 7em;
+}
+#rating-dropdown{
+  margin-top: .25em;
+}
+#rating-dropdown select{
+  margin-top: .25em;
 }
 
 
 body {
-  background-color: #ccc;
   font-family: sans-serif;
 }
 
@@ -145,7 +167,31 @@ body {
   border: 3px solid black;
   padding: .3em;
   border-radius: .5em;
-  background-color: antiquewhite;
+  background-color: #fbfde1;
+}
+
+/*Contact*/
+
+.contact{
+  height: 800px;
+}
+
+/*about*/
+
+.about{
+  height: 800px;
+}
+
+/*forum*/
+
+.forum{
+  height: 800px;
+}
+
+/*account*/
+
+.account{
+  height: 800px;
 }
 
 /*General Forms*/
@@ -172,6 +218,12 @@ form div {
   text-decoration: underline;
 }
 
+.sign-up-options input{
+  margin:.2em;
+  width:9em;
+  height:2em
+}
+
 /*UPLOAD SPECIFIC*/
 #upload #description input{
   height: 7em;
@@ -187,3 +239,209 @@ form div {
 .highlightButton{
   background-color: #4c9e9e;
 }
+
+/*Color Swaps*/
+/*dark*/
+
+
+.dark main{
+  background-color: rgb(102, 102, 102);
+}
+
+.dark .wrapper{
+  background-color:  rgb(102, 102, 102) ;
+}
+
+.dark #NavBar{
+  background-color:black;
+  color: #ffffff;
+}
+
+.dark .highlightButton{
+  background-color: darkmagenta;
+}
+.dark #dropdown li:hover {
+  background-color: darkmagenta;
+}
+
+.dark .menu li:hover {
+  background-color: darkmagenta;
+}
+
+.dark .nav-links a{
+  color: #ffffff;
+}
+
+.dark .sidebar{
+  background-color: rgb(58, 55, 55);
+  color: white;
+}
+
+.dark .sidebar .filter{
+  background-color: rgb(105, 102, 102);
+}
+
+.dark .result{
+  background-color: rgb(73, 71, 71);
+  color: white;
+}
+.dark .result a{
+  color: rgb(207, 207, 207);
+}
+
+.dark .submit input:hover{
+  background-color: darkmagenta;
+}
+
+.dark #dropdown {
+  background-color: rgb(61, 8, 61)
+}
+/*neutral*/
+
+.neutral main{
+  background-color: beige;
+}
+
+.neutral .wrapper{
+  background-color:  rgb(236, 225, 173) ;
+}
+
+.neutral #NavBar{
+  background-color:burlywood;
+  color: #ffffff;
+}
+
+.neutral .highlightButton{
+  background-color: brown;
+}
+.neutral #dropdown li:hover {
+  background-color: rgb(253, 185, 82);
+}
+
+.neutral .menu li:hover {
+  background-color: rgb(253, 185, 82);
+}
+
+.neutral .nav-links a{
+  color: #ffffff;
+}
+
+.neutral .sidebar{
+  background-color: #fdecb5;
+}
+
+.neutral .sidebar .filter{
+  background-color: rgb(243, 211, 168);
+}
+
+.neutral .result{
+  background-color: rgb(243, 211, 168);
+}
+
+.neutral .submit input:hover{
+  background-color: rgb(192, 186, 186);
+}
+
+.neutral #dropdown {
+  background-color: rgb(255, 153, 0)
+}
+
+
+/*Green*/
+.green main{
+  background-color: #e1f0d9;
+}
+
+.green .wrapper{
+  background-color:  #e1f0d9 ;
+}
+
+.green #NavBar{
+  background-color:rgb(18, 107, 18);
+  color: #ffffff;
+}
+
+.green .highlightButton{
+  background-color: #4c9e9e;
+}
+.green #dropdown li:hover {
+  background-color: #4c9e9e;
+}
+
+.green .menu li:hover {
+  background-color: #4c9e9e;
+}
+
+.green .nav-links a{
+  color: #ffffff;
+}
+
+.green .sidebar{
+  background-color: #bed3b2;
+}
+
+.green .sidebar .filter{
+  background-color: #fbfde1;
+}
+
+.green .result{
+  background-color: #fbfde1;
+}
+
+.green .submit input:hover{
+  background-color: rgb(192, 186, 186);
+}
+
+.green #dropdown {
+  background-color: rgb(1, 139, 139)
+}
+
+/*modern*/
+.modern main{
+  background-color: white;
+}
+
+.modern .wrapper{
+  background-color:  white ;
+}
+
+.modern #NavBar{
+  background-color: #Df4c73;
+  color: #ffffff;
+}
+
+.modern .highlightButton{
+  background-color: #ff608a;
+}
+.modern #dropdown li:hover {
+  background-color: #ff608a;
+}
+
+.modern .menu li:hover {
+  background-color: #ff608a;
+}
+
+.modern .nav-links a{
+  color: #ffffff;
+}
+
+.modern .sidebar{
+  background-color: #b0dde4;
+}
+
+.modern .sidebar .filter{
+  background-color: #e2f0f9;
+}
+
+.modern .result{
+  background-color: #e2f0f9;
+}
+
+.modern .submit input:hover{
+  background-color: rgb(192, 186, 186);
+}
+
+.modern #dropdown {
+  background-color: #ff3b70
+}
+
