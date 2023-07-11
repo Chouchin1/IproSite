@@ -9,32 +9,10 @@
     <link rel="icon" href="./images/EDG_Logo.png" type="image/x-icon">
   </head>
   <body onload="populate(), uploadAll()" class="" >
+    <div id="spacer"></div>
     <nav id="NavBar">
-        <div class="logo">
-            <img id="logo" src="./images/EDG_Logo.png" alt="">
-            <div class="logo">Accessibility Database</div>
-        </div>
         <ul class="nav-links">
-            <div class="menu">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-
-                <li class="services">
-                    <a>Services</a>
-                    <ul id="dropdown">
-                        <li><a href="./login.html">Log in</a></li>
-                        <li><a href="./signup.html">Sign Up</a>
-                            <input type="button" onclick="signOut()" hidden="true" value="Sign Out"></li>
-                        <li><a href="./forum.html">Forum</a></li>
-                        <li><a href="./upload.html">Upload</a></li>
-                    </ul>
-                </li>
-                    
-                <li><a href="contact.html">Contact</a></li>
-                <div class="search-bar">
-                    <label for="search">&#x1F50D</label>
-                    <input type="text" id="search" name="search" onkeyup="searchFunction()" placeholder="Search">
-                </div>
+            <li>
                 <div id="color-swap">
                     <label for="color-swap">Color Pallet</label><br>
                     <select name="pallet-select" id="pallet-select" onchange="changePallet(document.getElementById('pallet-select').selectedIndex)">
@@ -44,156 +22,414 @@
                         <option value="modern">Modern</option>
                     </select>
                 </div>
+            </li>
+            <div class="menu">
+                <li><a href="./index.html"><b>Home</b></a></li>
+                <li><a href="./about.html"><b>About</b></a></li>
+
+                <li class="services">
+                    <a><b>Services</b></a>
+                    <ul id="dropdown">
+                        <li><a href="./login.html">Log in</a></li>
+                        <li><a href="./signup.html">Sign Up</a>
+                            <input type="button" onclick="signOut()" hidden="true" value="Sign Out"></li>
+                        <li><a href="./forum.html">Forum</a></li>
+                        <li><a href="./upload.html">Upload</a></li>
+                    </ul>
+                </li>
+                    
+                <li><a href="contact.html"><b>Contact</b></a></li>
             </div>
         </ul>
+        <div class="search-bar">
+            <input type="text" id="search" name="search" onkeyup="searchFunction()" placeholder="Search">
+            <label for="search">&#x1F50D</label>
+        </div>
     </nav>
     <div class="wrapper">
-        <div class="sidebar">
-            <section class="filter-category">
-                <h1 class="category-name">
-                    Condition
-                </h1>
-                <div class="condition filter">
-                    <input type="checkbox" name="adhd" id="adhd" onclick="filterSelection('condition','adhd')">
-                    <label for="adhd">Adhd</label>
+        <div class="sidebar">   
+            <section class="sidebar-logo-wrapper">
+                <div class="sidebar-logo">
+                    <div class="green-behind"> </div>
+                    <img id="logo" src="./images/EDG_Logo.png" alt="">
+                    <p><b>Accessibility</b></p>
+                    <p>Database</p>
                 </div>
-                <div class="condition filter">
-                    <input type="checkbox" name="dyslexia" id="dyslexia" onclick="filterSelection('condition','dyslexia')">
-                    <label for="dyslexia">Dyslexia</label>
-                </div>
-                <div class="condition filter">
-                    <input type="checkbox" name="hearing-loss" id="hearing-loss" onclick="filterSelection('condition','hearing-loss')">
-                    <label for="hearing-loss">Hearing Loss</label>
-                </div>
-                <div class="condition filter">
-                    <input type="checkbox" name="dyscalculia" id="dyscalculia" onclick="filterSelection('condition','dyscalculia')">
-                    <label for="dyscalculia">Dyscalculia</label>
-                </div>
-                <div class="condition filter">
-                    <input type="checkbox" name="vision-impairment" id="vision-impairment" onclick="filterSelection('condition','vision-impairment')">
-                    <label for="vision-impairment">Vision Impairment</label>
-                </div>
-                <div class="condition filter">
-                    <input type="checkbox" name="epilepsy" id="epilepsy"  onclick="filterSelection('condition','epilepsy')">
-                    <label for="epilepsy">Epilepsy</label>
-                </div>
-                <div class="condition filter">
-                    <input type="checkbox" name="color-blindness" id="color-blindness" onclick="filterSelection('condition','color-blindness')">
-                    <label for="color-blindness">Color Blindness</label>
-                </div>
+            </section>     
+            <section>
+                <h2 id="title">Filter</h2>
             </section>
-            <section class="filter-category">
-                <h1 class="category-name">
-                    Type
-                </h1>
-                <div class="type filter">
-                    <input type="checkbox" name="website" id="website" onclick="filterSelection('type','website')">
-                    <label for="website">Website</label>
-                </div>
-                <div class="type filter">
-                    <input type="checkbox" name="desktop-apps" id="desktop-apps" onclick="filterSelection('type','desktop-apps')">
-                    <label for="desktop-apps">Desktop Apps</label>
-                </div>
-                <div class="type filter">
-                    <input type="checkbox" name="browser-extension" id="browser-extension" onclick="filterSelection('type','browser-extension')">
-                    <label for="browser-extension">Browser Extension</label>
-                </div>
-                <div class="type filter">
-                    <input type="checkbox" name="physical-products" id="physical-products" onclick="filterSelection('type','physical-products')">
-                    <label for="physical-products">Physical Products</label>
-                </div>
-            </section>
-            <section class="filter-category">
-                <h1 class="category-name">
-                    Minimum Rating
-                </h1>
-                <div id="rating-dropdown">
-                    <label for="min-rating">Select Minimum Rating</label><br>
-                    <select name="min-rating" id="min-rating" onchange="filterSelection('min-rating', 'N/A')">
-                        <option value="1">1 star</option>
-                        <option value="2">2 star</option>
-                        <option value="3">3 star</option>
-                        <option value="4">4 star</option>
-                        <option value="5">5 star</option>
-                    </select>
-                </div>
-            </section>
+            <div class="sidebar-main">
+                <section class="filter-category">
+                    <p class="category-name">
+                        Condition
+                    </p>
+                    <div class="condition filter">
+                        <input type="checkbox" name="adhd" id="adhd" onclick="filterSelection('condition','adhd')">
+                        <label for="adhd">ADHD</label>
+                    </div>
+                    <div class="condition filter">
+                        <input type="checkbox" name="dyslexia" id="dyslexia" onclick="filterSelection('condition','dyslexia')">
+                        <label for="dyslexia">Dyslexia</label>
+                    </div>
+                    <div class="condition filter">
+                        <input type="checkbox" name="hearing-loss" id="hearing-loss" onclick="filterSelection('condition','hearing-loss')">
+                        <label for="hearing-loss">Hearing Loss</label>
+                    </div>
+                    <div class="condition filter">
+                        <input type="checkbox" name="dyscalculia" id="dyscalculia" onclick="filterSelection('condition','dyscalculia')">
+                        <label for="dyscalculia">Dyscalculia</label>
+                    </div>
+                    <div class="condition filter">
+                        <input type="checkbox" name="vision-impairment" id="vision-impairment" onclick="filterSelection('condition','vision-impairment')">
+                        <label for="vision-impairment">Vision Impairment</label>
+                    </div>
+                    <div class="condition filter">
+                        <input type="checkbox" name="epilepsy" id="epilepsy"  onclick="filterSelection('condition','epilepsy')">
+                        <label for="epilepsy">Epilepsy</label>
+                    </div>
+                    <div class="condition filter">
+                        <input type="checkbox" name="color-blindness" id="color-blindness" onclick="filterSelection('condition','color-blindness')">
+                        <label for="color-blindness">Color Blindness</label>
+                    </div>
+                </section>
+                <section class="filter-category">
+                    <p class="category-name">
+                        Type
+                    </p>
+                    <div class="type filter">
+                        <input type="checkbox" name="website" id="website" onclick="filterSelection('type','website')">
+                        <label for="website">Website</label>
+                    </div>
+                    <div class="type filter">
+                        <input type="checkbox" name="desktop-apps" id="desktop-apps" onclick="filterSelection('type','desktop-apps')">
+                        <label for="desktop-apps">Desktop Apps</label>
+                    </div>
+                    <div class="type filter">
+                        <input type="checkbox" name="browser-extension" id="browser-extension" onclick="filterSelection('type','browser-extension')">
+                        <label for="browser-extension">Browser Extension</label>
+                    </div>
+                    <div class="type filter">
+                        <input type="checkbox" name="physical-products" id="physical-products" onclick="filterSelection('type','physical-products')">
+                        <label for="physical-products">Physical Products</label>
+                    </div>
+                </section>
+                <section class="filter-category min-rating">
+                    <p class="category-name">
+                        Minimum Rating
+                    </p>
+                    <div id="rating-dropdown">
+                        <select name="min-rating" id="min-rating" onchange="filterSelection('min-rating', 'N/A')">
+                            <option value="1">1 star</option>
+                            <option value="2">2 star</option>
+                            <option value="3">3 star</option>
+                            <option value="4">4 star</option>
+                            <option value="5">5 star</option>
+                        </select>
+                    </div>
+                </section>
+            </div>
         </div>
         <div class="main" id="main">
             <section class="result 4-star adhd browser-extension">
-                <a href="https://chrome.google.com/webstore/detail/adhd-reader/gcbchiambcokahmamemkoadlanaealmf" class="result-title"><b>ADHD Reader</b></a>
-                <p class="result-description">ADHD Reader is a chrome extension that helps you read faster by highlighting beginning of every word on the websites.</p>
-                
+                <div class="result-main">
+                    <a href="https://chrome.google.com/webstore/detail/adhd-reader/gcbchiambcokahmamemkoadlanaealmf" class="result-title"><b>ADHD Reader</b></a>
+                    <p class="result-description">ADHD Reader is a chrome extension that helps you read faster by highlighting beginning of every word on the websites.</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 3-star dyslexia adhd browser-extension">
-                <a href="..." class="result-title"><b>Dysly reader</b></a>
-                <p class="result-description">Maecenas accumsan lacus vel facilisis volutpat est velit. Consequat semper viverra nam libero justo laoreet sit amet. Lobortis elementum nibh.</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>Dysly reader</b></a>
+                    <p class="result-description">Maecenas accumsan lacus vel facilisis volutpat est velit. Consequat semper viverra nam libero justo laoreet sit amet. Lobortis elementum nibh.</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 5-star vision-impairment physical-products">
-                <a href="..." class="result-title"><b>Dark Reader</b></a>
-                <p class="result-description">Aliquam eleifend mi in nulla. Eu volutpat odio facilisis mauris sit. Sagittis vitae et leo duis ut diam quam.</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>Dark Reader</b></a>
+                    <p class="result-description">Aliquam eleifend mi in nulla. Eu volutpat odio facilisis mauris sit. Sagittis vitae et leo duis ut diam quam.</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 2-star hearing-loss browser-extension">
-                <a href="..." class="result-title"><b>Speech Recognition Anywhere</b></a>
-                <p class="result-description">Ultrices neque ornare aenean euismod. Enim praesent elementum facilisis leo vel fringilla est.</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>Speech Recognition Anywhere</b></a>
+                    <p class="result-description">Ultrices neque ornare aenean euismod. Enim praesent elementum facilisis leo vel fringilla est.</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 1-star epilepsy browser-extension">
-                <a href="..." class="result-title"><b>Seizafe - Epilepsy Alert for YouTube</b></a>
-                <p class="result-description">Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Interdum velit euismod in pellentesque massa placerat duis ultricies lacus.</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>Seizafe - Epilepsy Alert for YouTube</b></a>
+                    <p class="result-description">Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Interdum velit euismod in pellentesque massa placerat duis ultricies lacus.</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 5-star adhd browser-extension"> 
-                <a href="..." class="result-title"><b>Beeline Reader</b></a>
-                <p class="result-description">Euismod lacinia at quis risus sed vulputate odio ut enim. Est lorem ipsum dolor sit amet consectetur</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>Beeline Reader</b></a>
+                    <p class="result-description">Euismod lacinia at quis risus sed vulputate odio ut enim. Est lorem ipsum dolor sit amet consectetur</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 4-star vision-impairment browser-extension">
-                <a href="..." class="result-title"><b>Lorem ipsum</b></a>
-                <p class="result-description">Mi ipsum faucibus vitae aliquet nec. Turpis massa sed elementum tempus egestas sed sed risus</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>Lorem ipsum</b></a>
+                    <p class="result-description">Mi ipsum faucibus vitae aliquet nec. Turpis massa sed elementum tempus egestas sed sed risus</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 3-star color-blindness browser-extension">
-                <a href="..." class="result-title"><b>dolor sit</b></a>
-                <p class="result-description">Rhoncus urna neque viverra justo nec ultrices dui sapien.</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>dolor sit</b></a>
+                    <p class="result-description">Rhoncus urna neque viverra justo nec ultrices dui sapien.</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 1-star adhd dyscalculia browser-extension">
-                <a href="..." class="result-title"><b>consectetur adipiscing</b></a>
-                <p class="result-description">Blandit cursus risus at ultrices. Urna porttitor rhoncus dolor purus non enim</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>consectetur adipiscing</b></a>
+                    <p class="result-description">Blandit cursus risus at ultrices. Urna porttitor rhoncus dolor purus non enim</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 3-star hearing-loss browser-extension">
-                <a href="..." class="result-title"><b>enim ad minim</b></a>
-                <p class="result-description">Consectetur adipiscing elit pellentesque habitant morbi tristique senectus</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>enim ad minim</b></a>
+                    <p class="result-description">Consectetur adipiscing elit pellentesque habitant morbi tristique senectus</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 3-star epilepsy desktop-apps">
-                <a href="..." class="result-title"><b>irure dolor</b></a>
-                <p class="result-description">Orci ac auctor augue mauris augue neque gravida. Viverra mauris in aliquam sem</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>irure dolor</b></a>
+                    <p class="result-description">Orci ac auctor augue mauris augue neque gravida. Viverra mauris in aliquam sem</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 4-star dyslexia dyscalculia website">
-                <a href="..." class="result-title"><b>Duis aute</b></a>
-                <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>Duis aute</b></a>
+                    <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 5-star adhd desktop-apps">
-                <a href="..." class="result-title"><b>nulla pariatur</b></a>
-                <p class="result-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>nulla pariatur</b></a>
+                    <p class="result-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 2-star adhd vision-impairment extension">
-                <a href="..." class="result-title"><b>mollit anim</b></a>
-                <p class="result-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>mollit anim</b></a>
+                    <p class="result-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
             <section class="result 3-star color-blindness physical-products">
-                <a href="..." class="result-title"><b>Color Blind</b></a>
-                <p class="result-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-
+                <div class="result-main">
+                    <a href="..." class="result-title"><b>Color Blind</b></a>
+                    <p class="result-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                </div>
+                <div class="result-options">
+                    <div class="result-options-buttons">
+                        <a href="">Report</a>
+                        <a href="">Share</a>
+                        <a href="">Reviews</a>
+                    </div>
+                    <div class="rating">
+                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
+                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
+                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
+                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
+                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                    </div>
+                </div>
             </section>
         </div>
     </div> 

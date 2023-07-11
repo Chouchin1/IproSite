@@ -33,7 +33,6 @@ function populate() {
         dropDown[0].children[0].setAttribute('href','./account.html')
         dropDown[0].children[0].textContent = "Account"
     }
-    console.log(newUploads)
     //localStorage.clear()
 }
 
@@ -71,6 +70,7 @@ function filterSelection(category, name) {
 
 function removeOptions(){
   i=0
+  console.log('test')
   while(i < shown.length){
     classes = shown[i].className.split(" ")
     if (!(rating.includes(classes[1]))){
@@ -84,6 +84,7 @@ function removeOptions(){
           for(j = 0; j < selected[property].length; j++){
             if (!(classes.includes(selected[property][j]))){
                 shown[i].className = classes.join(" ") + " hidden"
+                console.log(shown[i].className)
                 hidden.push((shown.splice(i,1))[0])
                 i--
             }
@@ -109,7 +110,6 @@ function returnOptions(){
           for (j = 0; j < selected[property].length; j++){
             if (!classes.includes(selected[property][j])){
               bringBack = false
-              console.log(hidden[i].children[0])
               break
             }
           }
@@ -213,10 +213,7 @@ function highlightOne(self, other){
     self.className = 'highlightButton'
     if (other.className == 'highlightButton'){
       other.className = ''
-      console.log('test')
-      console.log(other.className)
     }
-    console.log(self.className)
   }
 
 }
@@ -254,11 +251,9 @@ function upload(name, link, description, className) {
     newResult.appendChild(resultDescription)
     document.getElementById('main').appendChild(newResult)
     shown.push(newResult)
-    console.log(newResult.className)
 }
 function signOut(){
         var dropDown = document.getElementById('dropdown').children
-        console.log('test')
         signedIn = false
         var dropDown = document.getElementById('dropdown').children
         dropDown[1].children[0].removeAttribute('hidden')

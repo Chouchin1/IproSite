@@ -9,31 +9,20 @@
     <link rel="icon" href="./images/EDG_Logo.png" type="image/x-icon">
   </head>
   <body onload="populate()" >
+    <div id="spacer"></div>
+    <div class="other-aside">
+        <section class="sidebar-logo-wrapper">
+            <div class="sidebar-logo">
+                <div class="green-behind"> </div>
+                <img id="logo" src="./images/EDG_Logo.png" alt="">
+                <p><b>Accessibility</b></p>
+                <p>Database</p>
+            </div>
+        </section>  
+    </div>    
     <nav id="NavBar">
-        <div class="logo">
-            <img id="logo" src="./images/EDG_Logo.png" alt="">
-            <div class="logo">Accessibility Database</div>
-        </div>
         <ul class="nav-links">
-            <div class="menu">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-
-                <li class="services">
-                    <a>Services</a>
-                    <ul id="dropdown">
-                        <li><a href="./login.html">Log in</a></li>
-                        <li><a href="./signup.html">Sign Up</a></li>
-                        <li><a href="./forum.html">Forum</a></li>
-                        <li><a href="./upload.html">Upload</a></li>
-                    </ul>
-                </li>
-                    
-                <li><a href="contact.html">Contact</a></li>
-                <div class="search-bar">
-                    <label for="search">&#x1F50D</label>
-                    <input type="text" id="search" name="search" onkeyup="searchFunction()" placeholder="Search">
-                </div>
+            <li>
                 <div id="color-swap">
                     <label for="color-swap">Color Pallet</label><br>
                     <select name="pallet-select" id="pallet-select" onchange="changePallet(document.getElementById('pallet-select').selectedIndex)">
@@ -43,8 +32,29 @@
                         <option value="modern">Modern</option>
                     </select>
                 </div>
+            </li>
+            <div class="menu">
+                <li><a href="./index.html"><b>Home</b></a></li>
+                <li><a href="./about.html"><b>About</b></a></li>
+
+                <li class="services">
+                    <a><b>Services</b></a>
+                    <ul id="dropdown">
+                        <li><a href="./login.html">Log in</a></li>
+                        <li><a href="./signup.html">Sign Up</a>
+                            <input type="button" onclick="signOut()" hidden="true" value="Sign Out"></li>
+                        <li><a href="./forum.html">Forum</a></li>
+                        <li><a href="./upload.html">Upload</a></li>
+                    </ul>
+                </li>
+                    
+                <li><a href="contact.html"><b>Contact</b></a></li>
             </div>
         </ul>
+        <div class="search-bar">
+            <input type="text" id="search" name="search" onkeyup="searchFunction()" placeholder="Search">
+            <label for="search">&#x1F50D</label>
+        </div>
     </nav>
     <main>
 
