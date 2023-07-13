@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./images/EDG_Logo.png" type="image/x-icon">
   </head>
-  <body onload="populate()" >
+  <body onload="populate()" class="green">
     <div id="spacer"></div>
     <div class="other-aside">
         <section class="sidebar-logo-wrapper">
@@ -25,7 +25,8 @@
             <li>
                 <div id="color-swap">
                     <label for="color-swap">Color Pallet</label><br>
-                    <select name="pallet-select" id="pallet-select" onchange="changePallet(document.getElementById('pallet-select').selectedIndex)">
+                    <select name="pallet-select" id="pallet-select" onchange="changePallet(document.getElementById('pallet-select').selectedIndex-1)">
+                        <option value="none">Select Color</option>
                         <option value="green">Green</option>
                         <option value="dark">Dark</option>
                         <option value="beige">Neutral</option>
@@ -42,7 +43,7 @@
                     <ul id="dropdown">
                         <li><a href="./login.html">Log in</a></li>
                         <li><a href="./signup.html">Sign Up</a>
-                            <input type="button" onclick="signOut()" hidden="true" value="Sign Out"></li>
+                            <a type="button" onclick="signOut()" hidden="true">Sign Out</a></li>
                         <li><a href="./forum.html">Forum</a></li>
                         <li><a href="./upload.html">Upload</a></li>
                     </ul>

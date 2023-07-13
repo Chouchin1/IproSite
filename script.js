@@ -22,7 +22,7 @@ function populate() {
     userEmail =     JSON.parse(localStorage.getItem('userEmail'))
     userPosts =     JSON.parse(localStorage.getItem('userPosts'))
     users =         JSON.parse(localStorage.getItem('users'))
-    currentColor =  JSON.parse(localStorage.getItem('currentColor'))
+    currentColor =  JSON.parse(localStorage.getItem('color'))
     if (currentColor){changePallet(['green', 'dark', 'neutral', 'modern'].indexOf(currentColor))}
     if (!newUploads)[newUploads = []]
     if (!users){users = {}}
@@ -33,7 +33,6 @@ function populate() {
         dropDown[0].children[0].setAttribute('href','./account.html')
         dropDown[0].children[0].textContent = "Account"
     }
-    //localStorage.clear()
 }
 
 function filterSelection(category, name) {
@@ -70,7 +69,6 @@ function filterSelection(category, name) {
 
 function removeOptions(){
   i=0
-  console.log('test')
   while(i < shown.length){
     classes = shown[i].className.split(" ")
     if (!(rating.includes(classes[1]))){
@@ -84,7 +82,6 @@ function removeOptions(){
           for(j = 0; j < selected[property].length; j++){
             if (!(classes.includes(selected[property][j]))){
                 shown[i].className = classes.join(" ") + " hidden"
-                console.log(shown[i].className)
                 hidden.push((shown.splice(i,1))[0])
                 i--
             }
@@ -134,6 +131,7 @@ function searchFunction() {
   filter = input.value.toUpperCase();
   main = document.getElementById("main");
   results = main.getElementsByClassName('result');
+  tryClear(filter)
 
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < results.length; i++) {
@@ -148,7 +146,11 @@ function searchFunction() {
     }
   }
 }
-
+function tryClear(filter){
+  if (filter == 'CLEAR'){
+    localStorage.clear();
+  }
+}
 function signUp(){
     var firstName = document.getElementById('sign-up-first-name').value
     var lastName = document.getElementById('sign-up-last-name').value
@@ -238,27 +240,32 @@ function uploadAll(){
 function upload(name, link, description, className) {
     const newResult = document.createElement("section")
     newResult.className =  className
-    const resultName = document.createElement("a")
-    resultName.href = link
-    resultName.className = "result-title"
-    const resultNameBold = document.createElement('b')
-    resultNameBold.textContent = name
-    resultName.appendChild(resultNameBold)
-    newResult.appendChild(resultName)
-    const resultDescription = document.createElement("p")
-    resultDescription.className = "result-description"
-    resultDescription.textContent = description
-    newResult.appendChild(resultDescription)
-    document.getElementById('main').appendChild(newResult)
-    shown.push(newResult)
+
+      const resultMain = document.createElement("div")
+      resultMain.className = 'result-main'
+        const resultTitle = document.createElement("a")
+        resultTitle.className = "result-title"
+        resultTitle.setAttribute('href', link)
+        resultTitle.textContent = name
+        const resultDescription = document.createElement('p')
+        resultDescription.className = 'result-description'
+        resultDescription.textContent = description
+        resultMain.appendChild(resultTitle)
+        resultMain.appendChild(resultDescription)
+        
+      newResult.appendChild(resultMain)
+      newResult.appendChild(document.getElementsByClassName('result-options')[0].cloneNode('true'))
+    document.getElementById('main').append(newResult)
+    console.log(newResult)
+
 }
+
 function signOut(){
-        var dropDown = document.getElementById('dropdown').children
         signedIn = false
         var dropDown = document.getElementById('dropdown').children
         dropDown[1].children[0].removeAttribute('hidden')
         dropDown[1].children[1].setAttribute('hidden', "")
-        dropDown[0].children[0].setAttribute('href','./signin.html')
+        dropDown[0].children[0].setAttribute('href','./login.html')
         dropDown[0].children[0].textContent = "Log In"
         localStorage.setItem('signedIn', JSON.stringify(false))
 
@@ -266,7 +273,9 @@ function signOut(){
 
 function changePallet(idx){
   body = document.getElementsByTagName('body')[0]
-  currentColor = ['green', 'dark', 'neutral', 'modern'][idx]
-  body.className = currentColor
-  localStorage.setItem('currentColor', JSON.stringify(currentColor))
+  var color = ['green', 'dark', 'neutral', 'modern'][idx]
+  body.className = color
+  localStorage.setItem('color', JSON.stringify(color))
+
 }
+

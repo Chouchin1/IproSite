@@ -1,5 +1,10 @@
 
-/* UTILITIES */
+/*#region UTILITIES */
+body {
+  font-family: Bahnschrift;
+  margin: 2%;
+  margin-top: 0;
+}
 main {
   padding-top: 13em;
   text-align: center;
@@ -22,7 +27,9 @@ a {
 li {
   list-style: none;
 }
-/* NAVBAR STYLING STARTS */
+/*#endregion*/
+/*NAVBAR STYLING STARTS*/
+/*#region mainBar*/
 #spacer{
   height: 4em;
   position: fixed;
@@ -43,6 +50,7 @@ li {
   border-top-right-radius: 1.75em;
   border-bottom-right-radius: 1.75em;
   height: 10em;
+  min-height: 5em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #NavBar .nav-links{
@@ -52,8 +60,8 @@ li {
 }
 
 #NavBar .search-bar{
-  padding-top: 3em;
-  text-align: right;
+  text-align:right;
+  margin-top: 5.5vh;
 }
 #NavBar .search-bar input{
   border-radius: 1.25em;
@@ -68,8 +76,8 @@ li {
   color: #ffffff;
   font-size: 1.2em;
 }
-
-/* LOGO */
+/*#endregion*/
+/*#region LOGO */
 #logo{
   width: 100px;
 }
@@ -78,8 +86,8 @@ li {
   font-size: .5em;
   text-decoration: none;
 }
-
-/* NAVBAR MENU */
+/*#endregion*/
+/*#region NAVBAR MENU */
 .menu {
   display: flex;
   gap: 1em;
@@ -97,11 +105,8 @@ li {
   padding: 5px 14px;
   height: 1.65em;
 }
-
-/* NAVBAR STICKY PROPERTY */
-
-
-/* DROPDOWN MENU */
+/*#endregion*/
+/*#region DROPDOWN MENU */
 .services {
   position: relative; 
 }
@@ -132,18 +137,28 @@ li {
   display:block;
   position: fixed;
 }
+/*#endregion*/
 /* BODY STYLING STARTS*/
-
+/*#region mainbody*/
 .wrapper {
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
 }
-
-
+.main {
+  width: 100%;
+  position:static;
+  background-color: #C1D2B2;
+  padding: 14vh;
+  margin-top: 2em;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+/*#endregion*/
+/*#region sidebar*/
 .sidebar {
   width: 20%;
-  height: 98vh;
+  height: 93.5vh;
   position: -webkit-sticky;
   position: sticky;
   top: .5em;
@@ -175,7 +190,7 @@ li {
   color: #366229;
 }
 
-.filter-category{
+.sidebar-main section{
   padding-left: 1em;
   padding-right: 1em;
   margin-top: .3em;
@@ -188,7 +203,7 @@ li {
   margin-bottom: .5em;
   border-radius: .15em;
   padding-left: .25em;
-  background-color: #C1D2B2;
+  background-color: #fbfde1;
   padding-top: .2em;
   font-size: .875em;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
@@ -200,42 +215,26 @@ li {
 }
 
 .sidebar .sidebar-main .min-rating{
-  border-bottom-left-radius: 2em;
-  border-bottom-right-radius: 2em;
+  border-bottom-left-radius: 2.5em;
+  border-bottom-right-radius: 2.5em;
+  height: 4.5em;
 }
 
-.main {
-  width: 100%;
-  position:static;
-  background-color: #C1D2B2;
-  padding: 6em;
-  margin-top: 2em;
-  border-bottom-left-radius: 2em;
-  border-bottom-right-radius: 2em;
-}
+
 #rating-dropdown{
   margin-top: .25em;
 }
 #rating-dropdown select{
   margin-top: .25em;
 }
+/*#endregion*/
+/*#region results*/
 
-
-body {
-  font-family: sans-serif;
-  margin: 2%;
-  margin-top: 0;
-}
-
-.result-title{
-  text-decoration: none;
-  color: #366229;
-  font-size: large;
-}
 
 .result{
   border-radius: .5em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #71885C;
 }
 .result-main {
   margin-top: 4em;
@@ -243,6 +242,7 @@ body {
   background-color: #fbfde1;
   display: flex;
   height: 6.5em;
+  
 }
 .result-main .result-title{
   width: 25%;
@@ -253,6 +253,10 @@ body {
   text-align: center;
   padding: 1em;
   font-size: 1.3em;
+  text-decoration: none;
+  color: #366229;
+  font-size: large;
+  font-weight: 750;
 }
 .result-main .result-description{
   width: 80%;
@@ -281,13 +285,8 @@ body {
 .result .result-options .result-options-buttons {
   width: 25.53%;
 }
-/*UPLOAD*/
-#upload{
-  height: 450px;
-  border-radius: 3em;
-  border: 3px solid black;
-}
-
+/*#endregion*/
+/*#region specificForms*/
 /*Contact*/
 
 .contact{
@@ -302,23 +301,126 @@ body {
 
 /*forum*/
 
-.forum{
-  height: 800px;
+.forum-sidebar {
+  text-align: center;
+  color: #37632A;
+}
+.forum-sidebar .sidebar-main .forum-link{
+  margin-top: .75em;
+  background-color: #FAFDE2;
+  border-radius: .15em;
+  color: black;
+  font-weight: 100;
+  height: auto;
+  padding: .25em;
+}
+.forum-sidebar .sidebar-main .forum-link a{
+  color: black;
+}
+.forum-sidebar .sidebar-main .features{
+  padding-bottom: 1em;
+}
+.forum-sidebar .sidebar-main .related-communities{
+  padding-bottom: 1em;
+}
+.forum-sidebar .sidebar-main .events{
+  height: 11.5em;
+  border-bottom-right-radius: 2em;
+  border-bottom-left-radius: 2em;
+}
+.forum-sidebar .sidebar-main .event-date{
+  width: 30%;
+  margin-top: 1.1em;
+  font-size: 1.5vh;
+  height: 30%;
 }
 
+.forum-sidebar .sidebar-main .event-link{
+  width: 65%;
+}
+.forum-sidebar .sidebar-main .event{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.forum-main{
+  padding-top: 12.5em;
+  z-index: -2;
+}
+.forum-top-bar{
+  position: fixed;
+  width: 80%;
+  top: 8em;
+  margin-left: 16%;
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: #C1D2B2;
+  height: 5.5em;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  padding-top: 3.5em;
+  padding-left: 8em;
+  z-index: -1;
+  color: #214F11;
+}
+
+.forum-top-bar .stats{
+  display: inline-flex;
+  padding-right: 8.75%;
+}
+.forum-top-bar .stats p{
+  font-size: 2vh;
+  padding-right: 2.8em;
+}
+
+.forum-post{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 12vh;
+  margin-bottom: .5em;
+}
+
+.forum-post-stats{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 45%;
+}
+.forum-post-main{
+  background-color: #FAFDE2;
+  width: 100%;
+  margin-right: .25em;
+  padding-top: 1em;
+  padding-left: 4.5em;
+}
+.forum-post-main .brief-post{
+  margin-bottom: .33em;
+  font-weight: 150;
+  font-size: 3.2vh;
+}
+.forum-post-stats div{
+  background-color: #FAFDE2;
+  width: 100%;
+  margin-right: .2em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.forum-post-stats div h1{
+  font-weight: 200;
+}
+
+.forum-post-main .full-post{
+  font-weight: 100;
+  font-size: 1.5vh;
+}
 /*account*/
 
 .account{
   height: 800px;
 }
 
-/*SIGN UP*/
-#sign-up{
-  margin-top: 1em;
-  height: 310px;
-  border-radius: 3em;
-  border: 3px solid black;
-}
 /*login*/
 #log-in{
   height: 300px;
@@ -328,8 +430,8 @@ body {
   border-radius: 3em;
   border: 3px solid black;
 }
-
-/*General Forms*/
+/*#endregion*/
+/*#region General Forms*/
 
 .other-aside{
   width: 16%;
@@ -339,12 +441,16 @@ body {
   top:.5em ;
 }
  .sidebar-logo{
-  padding-top: .9em;
-  padding-bottom: .9em;
+  padding-top: .83em;
+  padding-bottom: .83em;
 }
 form{
   background-color: #C1D2B2;
   padding: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+form input{
+  border-radius: .5em;
 }
 form div {
   margin-bottom: .5em;
@@ -362,8 +468,14 @@ form div {
   background-color: rgb(192, 186, 186);
 }
 
-
-/*SIGN UP SPECIFIC*/
+/*#endregion*/
+/*#region SIGN UP SPECIFIC*/
+#sign-up{
+  margin-top: 1em;
+  height: 310px;
+  border-radius: 3em;
+  border: 3px solid black;
+}
 .sign-up .terms a{
   text-decoration: underline;
 }
@@ -373,8 +485,13 @@ form div {
   width:9em;
   height:2em
 }
-
-/*UPLOAD SPECIFIC*/
+/*#endregion*/
+/*#region UPLOAD SPECIFIC*/
+#upload{
+  height: 450px;
+  border-radius: 3em;
+  border: 3px solid black;
+}
 #upload #description input{
   height: 7em;
   width: 20em;
@@ -389,124 +506,180 @@ form div {
 .highlightButton{
   background-color: #4c9e9e;
 }
-
+/*#endregion*/
 /*Color Swaps*/
-/*dark*/
-
-
+/*#region Dark*/
+.dark .sidebar{
+  color: darkgray;
+}
 .dark main{
-  background-color: rgb(102, 102, 102);
+  background-color: #292929;
+}
+.dark form{
+  background-color: #0c0c0c;
+  color: darkgray;
+}
+.dark .main{
+  background-color: #292929;
 }
 
 .dark .wrapper{
-  background-color:  rgb(102, 102, 102) ;
+  background-color:  white ;
 }
 
 .dark #NavBar{
-  background-color:black;
+  background-image: url("./images/Dark_Background.png");
+  background-size: cover;;
   color: #ffffff;
 }
 
 .dark .highlightButton{
-  background-color: darkmagenta;
+  background-color: #BB86FC;
 }
 .dark #dropdown li:hover {
-  background-color: darkmagenta;
+  background-color:  #BB86FC;
 }
 
 .dark .menu li:hover {
-  background-color: darkmagenta;
+  background-color: #BB86FC;
 }
-
 .dark .nav-links a{
   color: #ffffff;
 }
+.dark .sidebar-logo{
+  background-image: url("./images/Dark_Logo.png");
+  background-size: cover;
+}
 
-.dark .sidebar{
-  background-color: rgb(58, 55, 55);
-  color: white;
+.dark .sidebar #title{
+  color: darkgray;
+}
+
+.dark .sidebar section{
+  background-color: #292929;
 }
 
 .dark .sidebar .filter{
-  background-color: rgb(105, 102, 102);
+  background-color: #141414;
+  color: darkgray;
 }
 
 .dark .result{
-  background-color: rgb(73, 71, 71);
-  color: white;
+  background-color: #141414;
 }
-.dark .result a{
-  color: rgb(207, 207, 207);
+.dark .result-main{
+  background-color: #141414;
+  color: darkgray;
+}
+.dark .result .result-options .result-options-buttons a{
+  border-right: 3px solid #292929;
 }
 
+.dark .result-main .result-title{
+  border-right: solid 3px #292929;
+  color: darkgray;
+}
 .dark .submit input:hover{
-  background-color: darkmagenta;
+  background-color: rgb(192, 186, 186);
 }
 
 .dark #dropdown {
-  background-color: rgb(61, 8, 61)
+  background-color: 02DAC5
 }
-/*neutral*/
+.dark .result .result-options{
+  background-color: darkslateblue;
+  color: darkgray;
+}
+/*#endregion dark*/
+/*#region Neutral*/
 
 .neutral main{
-  background-color: beige;
+  background-color: #D1B399;
+}
+.neutral form{
+  background-color: #EFDDCD;
+}
+.neutral .main{
+  background-color: #D1B399;
 }
 
 .neutral .wrapper{
-  background-color:  rgb(236, 225, 173) ;
+  background-color:  white ;
 }
 
 .neutral #NavBar{
-  background-color:burlywood;
+  background-image: url("./images/Neutral_Background.png");
+  background-size: cover;
   color: #ffffff;
 }
 
 .neutral .highlightButton{
-  background-color: brown;
+  background-color: #c5a694;
 }
 .neutral #dropdown li:hover {
-  background-color: rgb(253, 185, 82);
+  background-color: #9F8271;
 }
 
 .neutral .menu li:hover {
-  background-color: rgb(253, 185, 82);
+  background-color: #9F8271;
 }
-
 .neutral .nav-links a{
   color: #ffffff;
 }
+.neutral .sidebar-logo{
+  background-image: url("./images/Neutral_Logo.png");
+  background-size: cover;
+}
 
-.neutral .sidebar{
-  background-color: #fdecb5;
+.neutral .sidebar #title{
+  color: #6E4E36;
+}
+
+.neutral .sidebar section{
+  background-color: #D1B399;
 }
 
 .neutral .sidebar .filter{
-  background-color: rgb(243, 211, 168);
+  background-color: #EFDDCD;
 }
 
 .neutral .result{
-  background-color: rgb(243, 211, 168);
+  background-color: #6E4E36;
+}
+.neutral .result-main{
+  background-color: #EFDDCD;
+}
+.neutral .result .result-options .result-options-buttons a{
+  border-right: 3px solid #D1B399;
 }
 
+.neutral .result-main .result-title{
+  border-right: solid 3px #D1B399;
+  color: #6E4E36;
+}
 .neutral .submit input:hover{
   background-color: rgb(192, 186, 186);
 }
 
 .neutral #dropdown {
-  background-color: rgb(255, 153, 0)
+  background-color: #836a5b
 }
-
-
-/*Green*/
+.neutral .result .result-options{
+  background-color: #6E4E36;
+}
+/*#endregion Neutral*/
+/*#region Green*/
 .green main{
   background-color: #e1f0d9;
 }
 
-.green .wrapper{
+.green .main{
+  background-color: #C1D2B2;
 }
 
 .green #NavBar{
-  background-color:rgb(18, 107, 18);
+  background-image: url("./images/Green_Background.png");
+  background-size: cover;
   color: #ffffff;
 }
 
@@ -524,7 +697,13 @@ form div {
 .green .nav-links a{
   color: #ffffff;
 }
-
+.green .sidebar-logo{
+  background-image: url("./images/Green_Logo.png");
+  background-size: cover;
+}
+.sidebar #title{
+  color: #366229;
+}
 .green .sidebar section{
   background-color: #C1D2B2;
 }
@@ -534,7 +713,7 @@ form div {
 }
 
 .green .result{
-  background-color: #fbfde1;
+  background-color: #71885C;
 }
 
 .green .submit input:hover{
@@ -545,9 +724,30 @@ form div {
   background-color: rgb(1, 139, 139)
 }
 
-/*modern*/
+.green .result-main{
+  background-color: #fbfde1;
+}
+.green .result .result-options{
+  background-color: #71885C;
+}
+.green .result .result-options .result-options-buttons a{
+  border-right: 3px solid #C1D2B2;
+}
+
+.green .result-main .result-title{
+  border-right: solid 3px #C1D2B2;
+  color: #366229;
+}
+/*#endregion*/
+/*#region modern*/
 .modern main{
-  background-color: white;
+  background-color: #E2F0F9;
+}
+.modern form{
+  background-color: #b0dde4;
+}
+.modern .main{
+  background-color: #b0dde4;
 }
 
 .modern .wrapper{
@@ -555,7 +755,8 @@ form div {
 }
 
 .modern #NavBar{
-  background-color: #Df4c73;
+  background-image: url("./images/Modern_Background.png");
+  background-size: cover;
   color: #ffffff;
 }
 
@@ -569,12 +770,19 @@ form div {
 .modern .menu li:hover {
   background-color: #ff608a;
 }
-
 .modern .nav-links a{
   color: #ffffff;
 }
+.modern .sidebar-logo{
+  background-image: url("./images/Modern_Logo.png");
+  background-size: cover;
+}
 
-.modern .sidebar{
+.modern .sidebar #title{
+  color: #5769b1;
+}
+
+.modern .sidebar section{
   background-color: #b0dde4;
 }
 
@@ -583,9 +791,19 @@ form div {
 }
 
 .modern .result{
+  background-color: #5769b1;
+}
+.modern .result-main{
   background-color: #e2f0f9;
 }
+.modern .result .result-options .result-options-buttons a{
+  border-right: 3px solid #b0dde4;
+}
 
+.modern .result-main .result-title{
+  border-right: solid 3px #b0dde4;
+  color: #5769b1;
+}
 .modern .submit input:hover{
   background-color: rgb(192, 186, 186);
 }
@@ -593,13 +811,17 @@ form div {
 .modern #dropdown {
   background-color: #ff3b70
 }
-/*HIDE CONTENT*/
+.modern .result .result-options{
+  background-color: #5769b1;
+}
+/*#endregion*/
+/*#region HIDE CONTENT*/
 
 .hidden {
   display: none;
 }
-
-/*RATING*/
+/*#endregion*/
+/*#region RATING*/
 .rating {
 /*display: flex;*/
 flex-direction: row-reverse;
@@ -607,7 +829,7 @@ justify-content: center;
 padding-right: .5em;
 font-size: 2vh;
 }
-.rating > input{
+.rating  input{
  display:none;
 }
 .rating > label {
@@ -630,3 +852,4 @@ opacity:1;
 .rating:hover > input:checked ~ label:before{
 opacity: 0.4;
  }
+ /*#endregion*/

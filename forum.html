@@ -8,25 +8,15 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./images/EDG_Logo.png" type="image/x-icon">
   </head>
-  <body onload="populate()">
+  <body onload="populate()" class="green" >
     <div id="spacer"></div>
-    <div class="other-aside">
-        <section class="sidebar-logo-wrapper">
-            <div class="sidebar-logo">
-                <div class="green-behind"> </div>
-                <img id="logo" src="./images/EDG_Logo.png" alt="">
-                <p><b>Accessibility</b></p>
-                <p>Database</p>
-            </div>
-        </section>  
-    </div>  
-    <nav id="NavBar">
-
+    <nav id="NavBar" >
         <ul class="nav-links">
             <li>
                 <div id="color-swap">
                     <label for="color-swap">Color Pallet</label><br>
-                    <select name="pallet-select" id="pallet-select" onchange="changePallet(document.getElementById('pallet-select').selectedIndex)">
+                    <select name="pallet-select" id="pallet-select" onchange="changePallet(document.getElementById('pallet-select').selectedIndex-1)">
+                        <option value="none">Select Color</option>
                         <option value="green">Green</option>
                         <option value="dark">Dark</option>
                         <option value="beige">Neutral</option>
@@ -43,7 +33,7 @@
                     <ul id="dropdown">
                         <li><a href="./login.html">Log in</a></li>
                         <li><a href="./signup.html">Sign Up</a>
-                            <input type="button" onclick="signOut()" hidden="true" value="Sign Out"></li>
+                            <a type="button" onclick="signOut()" hidden="true">Sign Out</a></li>
                         <li><a href="./forum.html">Forum</a></li>
                         <li><a href="./upload.html">Upload</a></li>
                     </ul>
@@ -57,7 +47,182 @@
             <label for="search">&#x1F50D</label>
         </div>
     </nav>
-    <main class="forum"></main>
-    <script src="script.js"></script>
-  </body>
+    <div class="forum-top-bar">
+        <h3 class="topics">
+            Topics
+        </h3>
+        <div class="stats">
+            <p>Replies</p>
+            <p>Views</p>
+            <p>Activity</p>
+        </div>
+    </div>
+    <div class="wrapper forum-wrapper">
+        <div class="sidebar forum-sidebar">   
+            <section class="sidebar-logo-wrapper">
+                <div class="sidebar-logo">
+                    <div class="green-behind"> </div>
+                    <img id="logo" src="./images/EDG_Logo.png" alt="">
+                    <p><b>Accessibility</b></p>
+                    <p>Database</p>
+                </div>
+            </section>     
+            <section>
+                <h2 id="title">Resources</h2>
+            </section>
+            <div class="sidebar-main">
+                <section class="features">
+                    <div class="forum-link">
+                        <p>Search the database</p>
+                    </div>
+                    <div class="forum-link">
+                        <p>Help</p>
+                    </div>
+                    <div class="forum-link">
+                        <p>FAQs</p>
+                    </div>
+                </section>
+                <section class="related-communities">
+                    <h3 class="forum-sidebar-name">Related communities</h3>
+                    <div class="forum-link">
+                        <a href="">community 1</a>
+                    </div>
+                    <div class="forum-link">
+                        <a href="">community 1</a>
+                    </div>
+                    <div class="forum-link">
+                        <a href="">community 1</a>
+                    </div>
+                </section>
+                <section class="events">
+                    <h3 class="forum-sidebar-name">Events</h3>
+                    <div class="event">
+                        <div class="event-date forum-link">
+                            <p>7/28/23</p>
+                        </div>
+                        <div class="event-link forum-link">
+                            <p>This is my event</p>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="event-date forum-link">
+                            <p>7/28/23</p>
+                        </div>
+                        <div class="event-link forum-link">
+                            <p>This is my event</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="main forum-main" id="main">
+            <section class="forum-post">
+                <div class="forum-post-main">
+                    <h1 class="brief-post">
+                        Issue with uploading extension
+                    </h1>
+                    <p class="full-post">
+                        I'm trying to upload my extension but I can't because...
+                    </p>
+                </div>
+                <div class="forum-post-stats">
+                    <div class="num-replies"><h1>8</h1></div>
+                    <div class="num-views"><h1>46</h1></div>
+                    <div class="latest-activity"><h1>24m</h1></div>
+                </div>
+            </section>
+            <section class="forum-post">
+                <div class="forum-post-main">
+                    <h1 class="brief-post">
+                        Issue with uploading extension
+                    </h1>
+                    <p class="full-post">
+                        I'm trying to upload my extension but I can't because...
+                    </p>
+                </div>
+                <div class="forum-post-stats">
+                    <div class="num-replies"><h1>8</h1></div>
+                    <div class="num-views"><h1>46</h1></div>
+                    <div class="latest-activity"><h1>24m</h1></div>
+                </div>
+            </section>
+            <section class="forum-post">
+                <div class="forum-post-main">
+                    <h1 class="brief-post">
+                        Issue with uploading extension
+                    </h1>
+                    <p class="full-post">
+                        I'm trying to upload my extension but I can't because...
+                    </p>
+                </div>
+                <div class="forum-post-stats">
+                    <div class="num-replies"><h1>8</h1></div>
+                    <div class="num-views"><h1>46</h1></div>
+                    <div class="latest-activity"><h1>24m</h1></div>
+                </div>
+            </section>
+            <section class="forum-post">
+                <div class="forum-post-main">
+                    <h1 class="brief-post">
+                        Issue with uploading extension
+                    </h1>
+                    <p class="full-post">
+                        I'm trying to upload my extension but I can't because...
+                    </p>
+                </div>
+                <div class="forum-post-stats">
+                    <div class="num-replies"><h1>8</h1></div>
+                    <div class="num-views"><h1>46</h1></div>
+                    <div class="latest-activity"><h1>24m</h1></div>
+                </div>
+            </section>
+            <section class="forum-post">
+                <div class="forum-post-main">
+                    <h1 class="brief-post">
+                        Issue with uploading extension
+                    </h1>
+                    <p class="full-post">
+                        I'm trying to upload my extension but I can't because...
+                    </p>
+                </div>
+                <div class="forum-post-stats">
+                    <div class="num-replies"><h1>8</h1></div>
+                    <div class="num-views"><h1>46</h1></div>
+                    <div class="latest-activity"><h1>24m</h1></div>
+                </div>
+            </section>
+            <section class="forum-post">
+                <div class="forum-post-main">
+                    <h1 class="brief-post">
+                        Issue with uploading extension
+                    </h1>
+                    <p class="full-post">
+                        I'm trying to upload my extension but I can't because...
+                    </p>
+                </div>
+                <div class="forum-post-stats">
+                    <div class="num-replies"><h1>8</h1></div>
+                    <div class="num-views"><h1>46</h1></div>
+                    <div class="latest-activity"><h1>24m</h1></div>
+                </div>
+            </section>
+            <section class="forum-post">
+                <div class="forum-post-main">
+                    <h1 class="brief-post">
+                        Issue with uploading extension
+                    </h1>
+                    <p class="full-post">
+                        I'm trying to upload my extension but I can't because...
+                    </p>
+                </div>
+                <div class="forum-post-stats">
+                    <div class="num-replies"><h1>8</h1></div>
+                    <div class="num-views"><h1>46</h1></div>
+                    <div class="latest-activity"><h1>24m</h1></div>
+                </div>
+            </section>
+        </div>
+    </div> 
+	<script src="script.js"></script>
+    </body>
 </html>     

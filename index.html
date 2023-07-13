@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./images/EDG_Logo.png" type="image/x-icon">
   </head>
-  <body onload="populate(), uploadAll()" class="" >
+  <body onload="populate(), uploadAll()" class="green" >
     <div id="spacer"></div>
     <nav id="NavBar">
         <ul class="nav-links">
             <li>
                 <div id="color-swap">
                     <label for="color-swap">Color Pallet</label><br>
-                    <select name="pallet-select" id="pallet-select" onchange="changePallet(document.getElementById('pallet-select').selectedIndex)">
+                    <select name="pallet-select" id="pallet-select" onchange="changePallet(document.getElementById('pallet-select').selectedIndex-1)">
+                        <option value="none">Select Color</option>
                         <option value="green">Green</option>
                         <option value="dark">Dark</option>
                         <option value="beige">Neutral</option>
@@ -32,7 +33,7 @@
                     <ul id="dropdown">
                         <li><a href="./login.html">Log in</a></li>
                         <li><a href="./signup.html">Sign Up</a>
-                            <input type="button" onclick="signOut()" hidden="true" value="Sign Out"></li>
+                            <a type="button" onclick="signOut()" hidden="true">Sign Out</a></li>
                         <li><a href="./forum.html">Forum</a></li>
                         <li><a href="./upload.html">Upload</a></li>
                     </ul>
@@ -153,8 +154,8 @@
             </section>
             <section class="result 3-star dyslexia adhd browser-extension">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>Dysly reader</b></a>
-                    <p class="result-description">Maecenas accumsan lacus vel facilisis volutpat est velit. Consequat semper viverra nam libero justo laoreet sit amet. Lobortis elementum nibh.</p>
+                    <a href="..." class="result-title">Dysly reader</a>
+                    <p class="result-description">Dysly is designed for kids and adults with learning or reading disabilities such as Dyslexia, Dysgraphia, and Dyscalculia. Suitable for school, work, or home use.</p>
                 </div>
                 <div class="result-options">
                     <div class="result-options-buttons">
@@ -173,8 +174,8 @@
             </section>
             <section class="result 5-star vision-impairment physical-products">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>Dark Reader</b></a>
-                    <p class="result-description">Aliquam eleifend mi in nulla. Eu volutpat odio facilisis mauris sit. Sagittis vitae et leo duis ut diam quam.</p>
+                    <a href="..." class="result-title">Dark Reader</a>
+                    <p class="result-description">Bright colors are reversed in Dark Reader to create strong contrast and easy nighttime reading.</p>
                 </div>
                 <div class="result-options">
                     <div class="result-options-buttons">
@@ -193,8 +194,8 @@
             </section>
             <section class="result 2-star hearing-loss browser-extension">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>Speech Recognition Anywhere</b></a>
-                    <p class="result-description">Ultrices neque ornare aenean euismod. Enim praesent elementum facilisis leo vel fringilla est.</p>
+                    <a href="..." class="result-title">Speech Recognition Anywhere</a>
+                    <p class="result-description">Fill out forms using voice recognition, and use speech to text to compose emails. Personalized voice commands let you command the Internet.</p>
                 </div>
                 <div class="result-options">
                     <div class="result-options-buttons">
@@ -213,8 +214,8 @@
             </section>
             <section class="result 1-star epilepsy browser-extension">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>Seizafe - Epilepsy Alert for YouTube</b></a>
-                    <p class="result-description">Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Interdum velit euismod in pellentesque massa placerat duis ultricies lacus.</p>
+                    <a href="..." class="result-title">Seizafe - Epilepsy Alert for YouTube</a>
+                    <p class="result-description">Seizafe features a vital algorithm and a stunning user interface that alerts you to any quickly flashing sequences in YouTube videos. Designed for people with epilepsy or who are otherwise photosensitive.</p>
                 </div>
                 <div class="result-options">
                     <div class="result-options-buttons">
@@ -223,18 +224,18 @@
                         <a href="">Reviews</a>
                     </div>
                     <div class="rating">
-                        <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
-                        <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>
-                        <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>
-                        <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>
-                        <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>
+                        <input type='radio' name='rating' value='5' id='5'><label for='5'>☆</label>
+                        <input type='radio' name='rating' value='4' id='4'><label for='4'>☆</label>
+                        <input type='radio' name='rating' value='3' id='3'><label for='3'>☆</label>
+                        <input type='radio' name='rating' value='2' id='2'><label for='2'>☆</label>
+                        <input type='radio' name='rating' value='1' id='1'><label for='1'>☆</label>
                     </div>
                 </div>
             </section>
             <section class="result 5-star adhd browser-extension"> 
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>Beeline Reader</b></a>
-                    <p class="result-description">Euismod lacinia at quis risus sed vulputate odio ut enim. Est lorem ipsum dolor sit amet consectetur</p>
+                    <a href="..." class="result-title">Beeline Reader</a>
+                    <p class="result-description">BeeLine uses a color gradient to guide eyes, making reading easier and faster. It allows quick transitions between lines, enabling many people to read 20%-30% faster on their first try.</p>
                 </div>
                 <div class="result-options">
                     <div class="result-options-buttons">
@@ -253,7 +254,7 @@
             </section>
             <section class="result 4-star vision-impairment browser-extension">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>Lorem ipsum</b></a>
+                    <a href="..." class="result-title">Lorem ipsum</a>
                     <p class="result-description">Mi ipsum faucibus vitae aliquet nec. Turpis massa sed elementum tempus egestas sed sed risus</p>
                 </div>
                 <div class="result-options">
@@ -273,7 +274,7 @@
             </section>
             <section class="result 3-star color-blindness browser-extension">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>dolor sit</b></a>
+                    <a href="..." class="result-title">dolor sit</a>
                     <p class="result-description">Rhoncus urna neque viverra justo nec ultrices dui sapien.</p>
                 </div>
                 <div class="result-options">
@@ -293,7 +294,7 @@
             </section>
             <section class="result 1-star adhd dyscalculia browser-extension">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>consectetur adipiscing</b></a>
+                    <a href="..." class="result-title">consectetur adipiscing</a>
                     <p class="result-description">Blandit cursus risus at ultrices. Urna porttitor rhoncus dolor purus non enim</p>
                 </div>
                 <div class="result-options">
@@ -313,7 +314,7 @@
             </section>
             <section class="result 3-star hearing-loss browser-extension">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>enim ad minim</b></a>
+                    <a href="..." class="result-title">enim ad minim</a>
                     <p class="result-description">Consectetur adipiscing elit pellentesque habitant morbi tristique senectus</p>
                 </div>
                 <div class="result-options">
@@ -333,7 +334,7 @@
             </section>
             <section class="result 3-star epilepsy desktop-apps">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>irure dolor</b></a>
+                    <a href="..." class="result-title">irure dolor</a>
                     <p class="result-description">Orci ac auctor augue mauris augue neque gravida. Viverra mauris in aliquam sem</p>
                 </div>
                 <div class="result-options">
@@ -353,7 +354,7 @@
             </section>
             <section class="result 4-star dyslexia dyscalculia website">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>Duis aute</b></a>
+                    <a href="..." class="result-title">Duis aute</a>
                     <p class="result-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
                 </div>
                 <div class="result-options">
@@ -373,7 +374,7 @@
             </section>
             <section class="result 5-star adhd desktop-apps">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>nulla pariatur</b></a>
+                    <a href="..." class="result-title">nulla pariatur</a>
                     <p class="result-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
                 </div>
                 <div class="result-options">
@@ -393,7 +394,7 @@
             </section>
             <section class="result 2-star adhd vision-impairment extension">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>mollit anim</b></a>
+                    <a href="..." class="result-title">mollit anim</a>
                     <p class="result-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
                 <div class="result-options">
@@ -413,8 +414,8 @@
             </section>
             <section class="result 3-star color-blindness physical-products">
                 <div class="result-main">
-                    <a href="..." class="result-title"><b>Color Blind</b></a>
-                    <p class="result-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                    <a href="..." class="result-title">Dalton</a>
+                    <p class="result-description">Dalton is a software that enables persons with various types of color blindness (color vision deficit) to see more colors.</p>
                 </div>
                 <div class="result-options">
                     <div class="result-options-buttons">
@@ -435,4 +436,4 @@
     </div> 
 	<script src="script.js"></script>
     </body>
-</html>     
+</html>
