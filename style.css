@@ -2,8 +2,8 @@
 /*#region UTILITIES */
 body {
   font-family: Bahnschrift;
-  margin: 2%;
-  margin-top: 0;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 main {
   padding-top: 13em;
@@ -143,7 +143,6 @@ li {
 .wrapper {
   display: flex;
   justify-content: space-between;
-  flex-grow: 1;
 }
 .main {
   width: 100%;
@@ -313,6 +312,8 @@ li {
   font-weight: 100;
   height: auto;
   padding: .25em;
+  
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
 }
 .forum-sidebar .sidebar-main .forum-link a{
   color: black;
@@ -392,6 +393,8 @@ li {
   margin-right: .25em;
   padding-top: 1em;
   padding-left: 4.5em;
+  
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
 }
 .forum-post-main .brief-post{
   margin-bottom: .33em;
@@ -406,6 +409,8 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
 }
 .forum-post-stats div h1{
   font-weight: 200;
@@ -509,28 +514,56 @@ form div {
 /*#endregion*/
 /*Color Swaps*/
 /*#region Dark*/
+.dark .forum-post-main{
+  background-color: #141414;
+  color: whitesmoke;
+}
+
+.dark .forum-post-stats div{
+  background-color: #141414;
+  color: whitesmoke;
+}
+
+.dark .forum-top-bar{
+  background-color: #292929;
+  color: yellowgreen;
+}
+
+.dark .forum-sidebar .sidebar-main .forum-link{
+  background-color: #141414;
+  color: whitesmoke;
+}
+
+.dark .forum-sidebar .sidebar-main .forum-link a{
+  color: whitesmoke;
+}
+
+.dark .forum-sidebar {
+  color: #6E4E36;
+}
+
 .dark .sidebar{
-  color: darkgray;
+  color: whitesmoke;
 }
 .dark main{
   background-color: #292929;
 }
 .dark form{
   background-color: #0c0c0c;
-  color: darkgray;
+  color: whitesmoke;
 }
 .dark .main{
   background-color: #292929;
 }
 
-.dark .wrapper{
-  background-color:  white ;
+.dark #spacer{
+  background-color: #0c0c0c;
 }
 
 .dark #NavBar{
   background-image: url("./images/Dark_Background.png");
   background-size: cover;;
-  color: #ffffff;
+  color: whitesmoke;
 }
 
 .dark .highlightButton{
@@ -544,7 +577,7 @@ form div {
   background-color: #BB86FC;
 }
 .dark .nav-links a{
-  color: #ffffff;
+  color: whitesmoke;
 }
 .dark .sidebar-logo{
   background-image: url("./images/Dark_Logo.png");
@@ -552,7 +585,7 @@ form div {
 }
 
 .dark .sidebar #title{
-  color: darkgray;
+  color: whitesmoke;
 }
 
 .dark .sidebar section{
@@ -561,7 +594,7 @@ form div {
 
 .dark .sidebar .filter{
   background-color: #141414;
-  color: darkgray;
+  color: whitesmoke;
 }
 
 .dark .result{
@@ -569,7 +602,7 @@ form div {
 }
 .dark .result-main{
   background-color: #141414;
-  color: darkgray;
+  color: whitesmoke;
 }
 .dark .result .result-options .result-options-buttons a{
   border-right: 3px solid #292929;
@@ -577,10 +610,10 @@ form div {
 
 .dark .result-main .result-title{
   border-right: solid 3px #292929;
-  color: darkgray;
+  color: whitesmoke;
 }
 .dark .submit input:hover{
-  background-color: rgb(192, 186, 186);
+  background-color: whitesmoke;
 }
 
 .dark #dropdown {
@@ -588,11 +621,32 @@ form div {
 }
 .dark .result .result-options{
   background-color: darkslateblue;
-  color: darkgray;
+  color: whitesmoke;
 }
 /*#endregion dark*/
 /*#region Neutral*/
+.neutral .forum-post-main{
+  background-color: #EFDDCD;
+}
 
+.neutral .forum-post-stats div{
+  background-color: #EFDDCD;
+}
+
+.neutral .forum-top-bar{
+  background-color: #D1B399;
+  color: #6E4E36;
+}
+.neutral .forum-sidebar .sidebar-main .forum-link{
+  background-color: #EFDDCD;
+  color: black;
+}
+.neutral .forum-sidebar .sidebar-main .forum-link a{
+  color: black;
+}
+.neutral .forum-sidebar {
+  color: #6E4E36;
+}
 .neutral main{
   background-color: #D1B399;
 }
@@ -601,10 +655,6 @@ form div {
 }
 .neutral .main{
   background-color: #D1B399;
-}
-
-.neutral .wrapper{
-  background-color:  white ;
 }
 
 .neutral #NavBar{
@@ -669,6 +719,30 @@ form div {
 }
 /*#endregion Neutral*/
 /*#region Green*/
+
+.green .forum-post-main{
+  background-color: #FAFDE2;
+}
+
+.green .forum-post-stats div{
+  background-color: #FAFDE2;
+}
+
+.green .forum-top-bar{
+  background-color: #C1D2B2;
+  color: #214F11;
+}
+.green .forum-sidebar .sidebar-main .forum-link{
+  background-color: #FAFDE2;
+  color: black;
+}
+.green .forum-sidebar .sidebar-main .forum-link a{
+  color: black;
+}
+.green .forum-sidebar {
+  color: #37632A;
+}
+
 .green main{
   background-color: #e1f0d9;
 }
@@ -740,6 +814,29 @@ form div {
 }
 /*#endregion*/
 /*#region modern*/
+.modern .forum-post-main{
+  background-color: #E2F0F9;
+}
+
+.modern .forum-post-stats div{
+  background-color: #E2F0F9;
+}
+
+.modern .forum-top-bar{
+  background-color: #B0DDE4;
+  color: #5769B1;
+}
+.modern .forum-sidebar .sidebar-main .forum-link{
+  background-color: #E2F0F9;
+  color: black;
+}
+.modern .forum-sidebar .sidebar-main .forum-link a{
+  color: black;
+}
+.modern .forum-sidebar {
+  color: #5769B1;
+}
+
 .modern main{
   background-color: #E2F0F9;
 }
@@ -748,10 +845,6 @@ form div {
 }
 .modern .main{
   background-color: #b0dde4;
-}
-
-.modern .wrapper{
-  background-color:  white ;
 }
 
 .modern #NavBar{

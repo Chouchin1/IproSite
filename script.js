@@ -272,10 +272,20 @@ function signOut(){
 }
 
 function changePallet(idx){
-  body = document.getElementsByTagName('body')[0]
-  var color = ['green', 'dark', 'neutral', 'modern'][idx]
-  body.className = color
-  localStorage.setItem('color', JSON.stringify(color))
-
+  console.log(idx)
+  if (idx >= 0){
+    body = document.getElementsByTagName('body')[0]
+    var color = ['green', 'dark', 'neutral', 'modern'][idx]
+    body.className = color
+    var style = document.createElement('style');
+    if (color == 'dark'){
+      document.head.appendChild(style);
+      style.sheet.insertRule('body {background-color: black}');
+    }else{
+      document.head.appendChild(style);
+      style.sheet.insertRule('body {background-color: white}');
+    }
+    localStorage.setItem('color', JSON.stringify(color))
+  }
 }
 
