@@ -289,3 +289,31 @@ function changePallet(idx){
   }
 }
 
+function showReviews(reviews){
+  document.getElementsByClassName('blur-wrapper')[0].classList.add('blur')
+  document.getElementsByTagName('body')[0].classList.add('no-overflow')
+  console.log( document.getElementsByClassName('pop-up-reviews')[0].classList)
+  document.getElementsByClassName('pop-up-reviews')[0].classList.remove('hidden')
+}
+
+var postReviewDisplayed = false
+var newReviewRating
+function rate(index){
+  var ratings = document.getElementsByClassName('rating-submission')
+  for(i = 0; i < index; i++){
+    ratings[i].textContent= '★'
+  }
+  for (i = index; i < 5; i++){
+    ratings[i].textContent = '☆'
+  }
+}
+
+function displayPostReview(){
+  if (!postReviewDisplayed){
+    document.getElementsByClassName('add-review')[0].classList.remove('hidden')
+  }
+}
+
+function postReview(){
+  var generalReview = document.getElementsByClassName('review')[0].cloneNode()
+}

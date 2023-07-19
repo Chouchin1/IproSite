@@ -9,6 +9,7 @@
     <link rel="icon" href="./images/EDG_Logo.png" type="image/x-icon">
   </head>
   <body onload="populate(), uploadAll()" class="green" >
+    <div class="blur-wrapper">
     <div id="spacer"></div>
     <nav id="NavBar">
         <ul class="nav-links">
@@ -141,7 +142,7 @@
                     <div class="result-options-buttons">
                         <a href="">Report</a>
                         <a href="">Share</a>
-                        <a href="">Reviews</a>
+                        <a onclick="showReviews([(1, 'review 1'), (5, 'review 2')])">Reviews</a>
                     </div>
                     <div class="rating">
                         <input type=”radio” name=”rating” value=”5″ id=”5″><label for=”5″>☆</label>
@@ -434,6 +435,33 @@
             </section>
         </div>
     </div> 
+    </div>
+    <div class="pop-up-reviews hidden">
+        <input type="button" value="Post Review" class="post-review" onclick="displayPostReview()">
+        <h1>Reviews</h1>
+        <div class="review">
+            <div class="above">
+                <img src="./images/4-star.png" alt="rating" class="rating">
+                <h3 class="user">User1234</h3>
+            </div><br>
+            <p class="comment">this is my comment</p>
+        </div>
+        <div class="review add-review hidden">
+            <div class="above">
+                <div class="rating">
+                    <input type=”radio” name=”rating” value=”5″ id=”5″ ><label class="rating-submission" for=”5″ onclick="rate(1)">☆</label>
+                    <input type=”radio” name=”rating” value=”4″ id=”4″ ><label class="rating-submission" for=”4″ onclick="rate(2)">☆</label>
+                    <input type=”radio” name=”rating” value=”3″ id=”3″ ><label class="rating-submission" for=”3″ onclick="rate(3)">☆</label>
+                    <input type=”radio” name=”rating” value=”2″ id=”2″ ><label class="rating-submission" for=”2″ onclick="rate(4)">☆</label>
+                    <input type=”radio” name=”rating” value=”1″ id=”1″ ><label class="rating-submission" for=”1″ onclick="rate(5)">☆</label>
+                </div>
+                <input type="button" value="submit" class="submit" onclick="postReview()">
+            </div><br>
+
+            <input type="text" class="comment">
+        </div>
+    </div>
+    
 	<script src="script.js"></script>
     </body>
 </html>
