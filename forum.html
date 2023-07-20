@@ -232,7 +232,7 @@
         <h1>Create a Forum Post</h1>
         <div class="forum-post-brief">
             <label for="summary">Enter a brief summary</label><br>
-            <input type="text" name="summary" id="post-summary" placeholder="Summary...">
+            <input type="text" name="summary" id="post-summary" placeholder="Summary..." class="summary">
         </div>
         <div class="forum-post-full">
             <label for="details">Detailed description</label><br>
@@ -257,7 +257,7 @@
             </div>
         </div>
         <div class="submit-wrapper">
-            <input type="button" value="Submit" class="submit" onclick="forumPost()">
+            <input type="button" value="Submit" class="submit" onclick="forumPost(document.getElementsByClassName('summary')[0].value, document.getElementsByClassName('detailed-description')[0].value)">
         </div>
     </div>
 	<script src="script.js"></script>

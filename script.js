@@ -368,18 +368,38 @@ function showPostUI(){
   document.getElementsByClassName('forum-post-ui')[0].classList.remove('hidden')
 }
 
-function forumPost(){
+function forumPost(summary, detailed){
   var wrapper = document.getElementsByClassName('forum-post')[0].cloneNode()
 
   var main = document.getElementsByClassName('forum-post')[0].getElementsByClassName('forum-post-main')[0].cloneNode()
 
     var brief = document.getElementsByClassName('forum-post')[0].getElementsByClassName('brief-post')[0].cloneNode()
+    brief.textContent = summary
     var full = document.getElementsByClassName('forum-post')[0].getElementsByClassName('full-post')[0].cloneNode()
-    
+    full.textContent = detailed
+    main.appendChild(brief)
+    main.appendChild(full)
+
   var stats = document.getElementsByClassName('forum-post')[0].getElementsByClassName('forum-post-stats')[0].cloneNode()
 
     var replies = document.getElementsByClassName('forum-post')[0].getElementsByClassName('num-replies')[0].cloneNode()
+    replies.appendChild(document.createElement('h1'))
+    replies.childNodes[0].textContent = '0'
     var views = document.getElementsByClassName('forum-post')[0].getElementsByClassName('num-views')[0].cloneNode()
+    views.appendChild(document.createElement('h1'))
+    views.childNodes[0].textContent = '0'
     var latestActivity = document.getElementsByClassName('forum-post')[0].getElementsByClassName('latest-activity')[0].cloneNode()
-    console.log('test')
+    latestActivity.appendChild(document.createElement('h1'))
+    latestActivity.childNodes[0].textContent = '0m'
+    stats.appendChild(replies)
+    stats.appendChild(views)
+    stats.appendChild(latestActivity)
+
+  unblur()
+  document.getElementsByClassName('forum-post-ui')[0].classList.add('hidden')
+  wrapper.appendChild(main)
+  wrapper.appendChild(stats)
+  
+  document.getElementsByClassName('forum-main')[0].appendChild(wrapper)
+  console.log('test')
 }
