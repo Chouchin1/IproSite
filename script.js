@@ -300,6 +300,7 @@ var postReviewDisplayed = false
 var newReviewRating
 function rate(index){
   var ratings = document.getElementsByClassName('rating-submission')
+  newReviewRating = index
   for(i = 0; i < index; i++){
     ratings[i].textContent= '★'
   }
@@ -314,6 +315,42 @@ function displayPostReview(){
   }
 }
 
-function postReview(){
+function postReview(comment){
   var generalReview = document.getElementsByClassName('review')[0].cloneNode()
+
+    var above = document.getElementsByClassName('review')[0].getElementsByClassName('above')[0].cloneNode()
+    console.log(typeof newReviewRating)
+      var image = document.getElementsByClassName('review')[0].getElementsByClassName('rating')[0].cloneNode()
+      switch(newReviewRating){
+        case 1: image.setAttribute('src', './images/1-star.png')
+          break
+        case 2: image.setAttribute('src', './images/2-star.png')
+          break
+        case 3: image.setAttribute('src', './images/3-star.png')
+          break
+        case 4: image.setAttribute('src', './images/4-star.png')
+          break
+        case 5: image.setAttribute('src', './images/5-star.png')
+          break
+      }
+
+      var user = document.getElementsByClassName('review')[0].getElementsByClassName('user')[0].cloneNode()
+      user.textContent = userName
+
+    above.appendChild(image)
+    above.appendChild(user)
+  
+    var newComment = document.getElementsByClassName('review')[0].getElementsByClassName('comment')[0].cloneNode()
+    newComment.textContent = comment
+  generalReview.appendChild(above)
+  generalReview.appendChild(newComment)
+  document.getElementsByClassName('pop-up-reviews')[0].appendChild(generalReview)
+  document.getElementsByClassName('add-review')[0].classList.add('hidden')
+}
+
+function closeReviews(){
+  document.getElementsByClassName('pop-up-reviews')[0].classList.add('hidden')
+  document.getElementById('NavBar').classList.remove('blur')
+  document.getElementsByClassName('blur-wrapper')[0].classList.remove('blur')
+  document.getElementsByTagName('body')[0].classList.remove('no-overflow')
 }

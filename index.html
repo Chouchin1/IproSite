@@ -437,7 +437,8 @@
     </div> 
     </div>
     <div class="pop-up-reviews hidden">
-        <input type="button" value="Post Review" class="post-review" onclick="displayPostReview()">
+        <input type="button" value="Post Review" class="post-review review-button" onclick="displayPostReview()">
+        <input type="button" value="Close Reviews" class="close-reviews review-button" onclick="closeReviews()">
         <h1>Reviews</h1>
         <div class="review">
             <div class="above">
@@ -455,10 +456,9 @@
                     <input type=”radio” name=”rating” value=”2″ id=”2″ ><label class="rating-submission" for=”2″ onclick="rate(4)">☆</label>
                     <input type=”radio” name=”rating” value=”1″ id=”1″ ><label class="rating-submission" for=”1″ onclick="rate(5)">☆</label>
                 </div>
-                <input type="button" value="submit" class="submit" onclick="postReview()">
+                <input type="button" value="submit" class="submit" onclick="postReview(document.getElementsByClassName('new-comment')[0].value)">
             </div><br>
-
-            <input type="text" class="comment">
+            <input type="text" class="new-comment" placeholder="Your comment here" name="new-comment">
         </div>
     </div>
     

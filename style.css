@@ -362,15 +362,45 @@ li {
   background-color: #C1D2B2;
   height: 5.5em;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-  padding-top: 3.5em;
-  padding-left: 8em;
+  padding-left: 1%;
   z-index: -1;
   color: #214F11;
 }
+.forum-top-bar .topics{
+  margin-top: 3em;
+}
+.forum-top-bar .other{
+  display: inline-flex;
+}
 
+.forum-top-bar .new-post-button input:hover {
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.forum-post-ui{
+  z-index: 10;
+  position: fixed;
+  top: 20em;
+}
+
+.forum-top-bar .new-post-button{
+  background-color: #C1D2B2;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+  margin-right: 20em;
+  margin-bottom: 1em;
+  height: 2.2em;
+  margin-top: 3.6em;
+  width: 6em;
+  border-radius: .3em;
+  color: #214F11;
+  font-weight: 525;
+}
 .forum-top-bar .stats{
   display: inline-flex;
   padding-right: 8.75%;
+  margin-top: 3.5em;
 }
 .forum-top-bar .stats p{
   font-size: 2vh;
@@ -986,9 +1016,15 @@ opacity: 0.4;
   text-align: center;
 }
 .pop-up-reviews .post-review{
+  margin-left: 10vh;
+}
+.pop-up-reviews .close-reviews{
+  margin-left: 64vh;
+}
+
+.pop-up-reviews .review-button{
   position: fixed;
   top: 13.3em;
-  margin-left: 2.5em;
   height: 2.35em;
   width: 7em;
   border-radius: 1em;
@@ -1004,7 +1040,7 @@ opacity: 0.4;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
   padding: .25em;
 }
-.pop-up-reviews .post-review:hover{
+.pop-up-reviews .review-button:hover{
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
