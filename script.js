@@ -356,6 +356,7 @@ function postReview(comment){
   generalReview.appendChild(newComment)
   document.getElementsByClassName('pop-up-reviews')[0].appendChild(generalReview)
   document.getElementsByClassName('add-review')[0].classList.add('hidden')
+  document.getElementsByClassName('demo')[0].textContent = '☆'
 }
 
 function closeReviews(){
