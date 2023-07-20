@@ -289,9 +289,19 @@ function changePallet(idx){
   }
 }
 
-function showReviews(reviews){
+function blur(){
   document.getElementsByClassName('blur-wrapper')[0].classList.add('blur')
   document.getElementsByTagName('body')[0].classList.add('no-overflow')
+}
+
+function unblur(){
+  document.getElementById('NavBar').classList.remove('blur')
+  document.getElementsByClassName('blur-wrapper')[0].classList.remove('blur')
+  document.getElementsByTagName('body')[0].classList.remove('no-overflow')
+}
+
+function showReviews(reviews){
+  blur()
   console.log( document.getElementsByClassName('pop-up-reviews')[0].classList)
   document.getElementsByClassName('pop-up-reviews')[0].classList.remove('hidden')
 }
@@ -350,7 +360,26 @@ function postReview(comment){
 
 function closeReviews(){
   document.getElementsByClassName('pop-up-reviews')[0].classList.add('hidden')
-  document.getElementById('NavBar').classList.remove('blur')
-  document.getElementsByClassName('blur-wrapper')[0].classList.remove('blur')
-  document.getElementsByTagName('body')[0].classList.remove('no-overflow')
+  unblur()
+}
+
+function showPostUI(){
+  blur()
+  document.getElementsByClassName('forum-post-ui')[0].classList.remove('hidden')
+}
+
+function forumPost(){
+  var wrapper = document.getElementsByClassName('forum-post')[0].cloneNode()
+
+  var main = document.getElementsByClassName('forum-post')[0].getElementsByClassName('forum-post-main')[0].cloneNode()
+
+    var brief = document.getElementsByClassName('forum-post')[0].getElementsByClassName('brief-post')[0].cloneNode()
+    var full = document.getElementsByClassName('forum-post')[0].getElementsByClassName('full-post')[0].cloneNode()
+    
+  var stats = document.getElementsByClassName('forum-post')[0].getElementsByClassName('forum-post-stats')[0].cloneNode()
+
+    var replies = document.getElementsByClassName('forum-post')[0].getElementsByClassName('num-replies')[0].cloneNode()
+    var views = document.getElementsByClassName('forum-post')[0].getElementsByClassName('num-views')[0].cloneNode()
+    var latestActivity = document.getElementsByClassName('forum-post')[0].getElementsByClassName('latest-activity')[0].cloneNode()
+    console.log('test')
 }

@@ -52,6 +52,7 @@ li {
   height: 10em;
   min-height: 5em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
 }
 #NavBar .nav-links{
   display: flex;
@@ -363,7 +364,7 @@ li {
   height: 5.5em;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   padding-left: 1%;
-  z-index: -1;
+  z-index: 0;
   color: #214F11;
 }
 .forum-top-bar .topics{
@@ -371,11 +372,6 @@ li {
 }
 .forum-top-bar .other{
   display: inline-flex;
-}
-
-.forum-top-bar .new-post-button input:hover {
-  cursor: pointer;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .forum-post-ui{
@@ -397,6 +393,11 @@ li {
   color: #214F11;
   font-weight: 525;
 }
+.forum-top-bar .new-post-button:hover{
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
 .forum-top-bar .stats{
   display: inline-flex;
   padding-right: 8.75%;
@@ -1077,5 +1078,63 @@ opacity: 0.4;
 .pop-up-reviews .above{
   display: inline-flex;
   justify-content: space-between;
+}
+/*#endregion*/
+
+/*#region forum-post*/
+.forum-post-ui{
+  z-index: 10;
+  position: fixed;
+  top: 7em;
+  width: 50%;
+  margin-left: 25%;
+  padding-left: 6em;
+  padding-top: 2em;
+  height: 35em;
+  background-color: #E3EFDB;
+  border-radius: 3em;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
+.forum-post-ui .tag-buttons{
+  text-align: center;
+  margin-right: 6em;
+}
+.forum-post-ui .tag-buttons input{
+  width: 24%;
+  height: 2em;
+  border-radius: .25em;
+  border: 1px solid black;
+  margin-top: .35em;
+}
+
+.forum-post-ui .submit-wrapper{
+  text-align: center;
+  margin-right: 6em;
+}
+
+.forum-post-ui .submit{
+  width: 30%;
+  height: 2.3em;
+  margin-top: 1em;
+  border: 1px solid black;
+  border-radius: .25em;
+}
+
+.forum-post-ui .forum-post-brief{
+  margin-bottom: .5em;
+  margin-top: 1em;
+}
+.forum-post-ui .forum-post-brief input{
+  width: 70%;
+}
+
+.forum-post-ui .forum-post-full{
+  margin-bottom: 1em;
+}
+
+.forum-post-ui .forum-post-full input{
+  width: 85%;
+  height: 11em;
 }
 /*#endregion*/

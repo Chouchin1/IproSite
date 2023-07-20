@@ -10,6 +10,7 @@
   </head>
   <body onload="populate()" class="green">
     <div id="spacer"></div>
+    <div class="blur-wrapper">
     <nav id="NavBar" >
         <ul class="nav-links">
             <li>
@@ -226,8 +227,38 @@
             </section>
         </div>
     </div> 
-    <div class="forum-post-ui">
-        <h1>test</h1>
+    </div>
+    <div class="forum-post-ui hidden">
+        <h1>Create a Forum Post</h1>
+        <div class="forum-post-brief">
+            <label for="summary">Enter a brief summary</label><br>
+            <input type="text" name="summary" id="post-summary" placeholder="Summary...">
+        </div>
+        <div class="forum-post-full">
+            <label for="details">Detailed description</label><br>
+            <input type="text" placeholder="Detailed description..." name="details" class="detailed-description">
+        </div>
+        <h3 class="tags-title">Tags</h3>
+        <div class="tag-buttons">
+            <div class="condition-buttons">
+                <input type="button" value="adhd">
+                <input type="button" value="dyslexia">
+                <input type="button" value="hearing loss">
+                <input type="button" value="dyscalculia"><br>
+                <input type="button" value="vision impairment">
+                <input type="button" value="epilepsy">
+                <input type="button" value="color-blindness">
+            </div>
+            <div class="type-buttons">
+                <input type="button" value="website">
+                <input type="button" value="physical product"><br>
+                <input type="button" value="desktop-apps">
+                <input type="button" value="browser-extension">
+            </div>
+        </div>
+        <div class="submit-wrapper">
+            <input type="button" value="Submit" class="submit" onclick="forumPost()">
+        </div>
     </div>
 	<script src="script.js"></script>
     </body>
