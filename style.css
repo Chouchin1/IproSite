@@ -1017,15 +1017,15 @@ opacity: 0.4;
   text-align: center;
 }
 .pop-up-reviews .post-review{
-  margin-left: 10vh;
+  margin-left: 10vw;
 }
 .pop-up-reviews .close-reviews{
-  margin-left: 64vh;
+  margin-left: 35vw;
 }
 
 .pop-up-reviews .review-button{
   position: fixed;
-  top: 13.3em;
+  top: 22vh;
   height: 2.35em;
   width: 7em;
   border-radius: 1em;
